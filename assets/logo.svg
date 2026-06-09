@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 130" role="img" aria-label="Klub der Tausend Tränen">
+  <title>Klub der Tausend Tränen — Tropfen mit Wellen</title>
+  <defs>
+    <clipPath id="kdt-drop">
+      <path d="M50 5 C 50 5, 10 64, 10 92 A 40 40 0 0 0 90 92 C 90 64, 50 5, 50 5 Z"></path>
+    </clipPath>
+  </defs>
+  
+  <path d="M50 5 C 50 5, 10 64, 10 92 A 40 40 0 0 0 90 92 C 90 64, 50 5, 50 5 Z" fill="#E4B7C6"></path>
+  
+  <g clip-path="url(#kdt-drop)">
+    <path d="M-2 90 Q 22 80, 50 88 T 102 86 L 102 100 Q 78 94, 50 98 T -2 100 Z" fill="#B16E86"></path>
+    <path d="M-2 104 Q 22 94, 50 102 T 102 100 L 102 135 L -2 135 Z" fill="#6E2E48"></path>
+  </g>
+</svg>

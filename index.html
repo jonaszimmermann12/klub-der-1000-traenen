@@ -1,0 +1,810 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Klub der Tausend Tränen, Anmelden</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-petrol-deep: #073336;
+    --color-petrol:      #11676A;
+    --color-petrol-high: #3A8E91;
+    --color-rose:        #E4B7C6;
+    --color-ink:         #092B4E;
+
+    --font-display: "Safiro", "Hanken Grotesk", "Helvetica Neue", system-ui, sans-serif;
+    --font-body:    "Open Sans", system-ui, sans-serif;
+
+    --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2.5rem;
+    --space-5: 4rem;   --space-6: 6rem;  --space-7: 10rem;
+
+    --container: 1200px;
+    --container-text: 720px;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { background: var(--color-petrol); color: var(--color-rose); scroll-behavior: smooth; }
+  body { font-family: var(--font-body); font-size: 1.1rem; line-height: 1.55; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  ::selection { background: var(--color-rose); color: var(--color-ink); }
+
+  h1, h2 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.015em; line-height: 0.95; margin: 0; }
+  h3 { font-family: var(--font-display); font-weight: 300; letter-spacing: 0; line-height: 1.05; margin: 0; }
+  p { margin: 0 0 1em 0; text-wrap: pretty; }
+  a { color: inherit; }
+
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 var(--space-3); }
+  .container--text { max-width: var(--container-text); margin: 0 auto; padding: 0 var(--space-3); }
+
+  /* ============ HEADER ============ */
+  header.top {
+    position: absolute; top: 0; left: 0; right: 0; z-index: 10;
+    padding: var(--space-3) 0;
+  }
+  header.top .row {
+    display: flex; justify-content: space-between; align-items: center; gap: var(--space-3);
+  }
+  .brand-mark {
+    display: inline-grid; grid-template-columns: auto auto; align-items: center; gap: 0.7em;
+    text-decoration: none; color: var(--color-rose);
+  }
+  .brand-mark__icon { height: 46px; width: auto; display: block; }
+  .brand-mark__word {
+    font-family: var(--font-display); font-weight: 800; text-transform: uppercase;
+    color: var(--color-rose); line-height: 0.88; letter-spacing: -0.005em;
+    font-size: 0.95rem;
+  }
+  .brand-mark__word span { display: block; }
+  .header-cta {
+    font-family: var(--font-body); font-weight: 600; font-size: 0.78rem;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-rose);
+    text-decoration: none; padding: 0.7em 1.2em;
+    border: 1px solid var(--color-rose);
+    transition: background 120ms ease, color 120ms ease;
+  }
+  .header-cta:hover { background: var(--color-rose); color: var(--color-ink); }
+
+  /* ============ HERO ============ */
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    background: var(--color-ink);
+    overflow: hidden;
+    display: flex; align-items: flex-end;
+  }
+  .hero__photo {
+    position: absolute; inset: 0;
+    background: url("assets/wave-deep.jpg") center center / cover no-repeat;
+    background-color: var(--color-ink);
+  }
+  .hero__overlay {
+    position: absolute; inset: 0;
+    background-color: var(--color-ink);
+    mix-blend-mode: multiply;
+    opacity: 0.72;
+  }
+  /* second deepening pass at the bottom for headline contrast — solid, no gradient on text */
+  .hero__deepen {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(180deg, rgba(7,51,54,0.0) 0%, rgba(7,51,54,0.0) 50%, rgba(9,43,78,0.55) 100%);
+  }
+  .hero__inner {
+    position: relative; z-index: 2;
+    width: 100%;
+    padding: var(--space-6) 0 var(--space-5);
+  }
+  .hero__pres {
+    font-family: var(--font-body); font-weight: 600; font-size: 0.78rem;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-rose);
+    opacity: 0.85;
+    margin-bottom: var(--space-3);
+  }
+  .hero__title {
+    font-family: var(--font-display); font-weight: 800;
+    letter-spacing: -0.025em; line-height: 0.92;
+    color: var(--color-rose);
+    font-size: clamp(3rem, 10vw, 8rem);
+  }
+  .hero__title span { display: block; }
+  .hero__sub {
+    margin-top: var(--space-3);
+    font-family: var(--font-display); font-weight: 300;
+    letter-spacing: 0;
+    color: var(--color-rose);
+    font-size: clamp(1.1rem, 2.4vw, 1.75rem);
+    max-width: 38ch;
+    line-height: 1.15;
+  }
+  .hero__lead {
+    margin-top: var(--space-3);
+    font-size: 1.15rem;
+    line-height: 1.55;
+    color: var(--color-rose);
+    max-width: 48ch;
+    opacity: 0.95;
+  }
+  .hero__scroll {
+    margin-top: var(--space-4);
+    display: inline-flex; align-items: center; gap: 0.7em;
+    font-family: var(--font-body); font-weight: 600; font-size: 0.78rem;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-rose);
+    text-decoration: none;
+  }
+  .hero__scroll::after { content: "↓"; font-family: var(--font-body); font-size: 1.1rem; }
+
+  /* ============ INTRO STRIP ============ */
+  .intro {
+    background: var(--color-petrol);
+    padding: var(--space-7) 0 var(--space-6);
+  }
+  .intro__kicker {
+    font-family: var(--font-body); font-weight: 700; font-size: 0.78rem;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-ink);
+    margin-bottom: var(--space-3);
+  }
+  .intro__title {
+    color: var(--color-rose);
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+  }
+  .intro__title em {
+    font-style: normal; font-weight: 300; letter-spacing: 0;
+  }
+  .intro__lead {
+    margin-top: var(--space-3);
+    color: var(--color-ink);
+    font-size: 1.25rem;
+    line-height: 1.55;
+    max-width: 56ch;
+  }
+  .intro__trio {
+    margin-top: var(--space-5);
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4);
+    border-top: 1px solid var(--color-petrol-high);
+    padding-top: var(--space-4);
+  }
+  .intro__trio div h4 {
+    font-family: var(--font-display); font-weight: 800;
+    color: var(--color-rose); font-size: 1.5rem; margin: 0 0 var(--space-2); letter-spacing: -0.01em;
+  }
+  .intro__trio div p { color: var(--color-ink); font-size: 1rem; margin: 0; max-width: 32ch; }
+
+  /* ============ FORMATS ============ */
+  .formats {
+    background: var(--color-petrol-deep);
+    padding: var(--space-7) 0 var(--space-6);
+  }
+  .sec-head { display: grid; grid-template-columns: auto 1fr; gap: var(--space-4); align-items: end; margin-bottom: var(--space-5); }
+  .sec-head .num { font-family: var(--font-display); font-weight: 800; text-transform: uppercase; font-size: 1.2rem; letter-spacing: 0.06em; color: var(--color-petrol-high); }
+  .sec-head h2 { color: var(--color-rose); font-size: clamp(2.2rem, 5vw, 3.6rem); letter-spacing: -0.02em; }
+  .sec-head .kicker { grid-column: 2; font-family: var(--font-display); font-weight: 300; letter-spacing: 0; color: var(--color-petrol-high); font-size: 1.15rem; line-height: 1.35; max-width: 50ch; }
+
+  .format-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+    margin-top: var(--space-5);
+  }
+  .format-tile {
+    background: var(--color-petrol);
+    padding: var(--space-4);
+    display: flex; flex-direction: column;
+    gap: var(--space-2);
+    min-height: 460px;
+  }
+  .format-tile__num {
+    font-family: var(--font-body); font-weight: 700;
+    font-size: 0.78rem; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--color-petrol-high);
+    margin-bottom: var(--space-3);
+  }
+  .format-tile__title {
+    font-family: var(--font-display); font-weight: 800;
+    color: var(--color-rose); font-size: clamp(2rem, 3.4vw, 2.6rem);
+    line-height: 1; letter-spacing: -0.025em;
+    margin: 0;
+  }
+  .format-tile__echo {
+    font-family: var(--font-display); font-weight: 300;
+    color: var(--color-rose); opacity: 0.78;
+    font-size: 1.15rem; line-height: 1.25;
+    margin: 0.2em 0 var(--space-3);
+    max-width: 32ch;
+  }
+  .format-tile__desc {
+    color: var(--color-rose); opacity: 0.92;
+    font-size: 1.02rem; line-height: 1.55;
+    margin: 0 0 var(--space-3); max-width: none;
+  }
+  .format-tile__meta {
+    margin-top: auto;
+    padding-top: var(--space-3);
+    border-top: 1px solid var(--color-petrol-high);
+    display: flex; flex-direction: column; gap: 0.3em;
+  }
+  .format-tile__meta .meta-line-a {
+    font-family: var(--font-body); font-weight: 700;
+    font-size: 0.78rem; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--color-rose);
+  }
+  .format-tile__meta .meta-line-b {
+    font-family: var(--font-body); font-weight: 500;
+    font-size: 0.92rem; color: var(--color-petrol-high);
+  }
+  .format-tile__cta {
+    align-self: flex-start;
+    margin-top: var(--space-3);
+    display: inline-flex; align-items: center; gap: 0.6em;
+    padding: 0.85em 1.3em;
+    font-family: var(--font-body); font-weight: 600;
+    font-size: 0.78rem; letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-petrol-deep); background: var(--color-rose);
+    text-decoration: none;
+    border: 1px solid var(--color-rose);
+    transition: background 120ms ease, color 120ms ease;
+  }
+  .format-tile__cta:hover { background: transparent; color: var(--color-rose); }
+  .format-tile__cta::after { content: "→"; font-family: var(--font-body); }
+
+  /* ============ FORM ============ */
+  .form-section {
+    background: var(--color-rose);
+    color: var(--color-ink);
+    padding: var(--space-7) 0;
+  }
+  .form-section ::selection { background: var(--color-ink); color: var(--color-rose); }
+  .form-head { margin-bottom: var(--space-5); }
+  .form-head .kicker {
+    font-family: var(--font-body); font-weight: 700; font-size: 0.78rem;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-petrol-deep);
+    margin-bottom: var(--space-3);
+  }
+  .form-head h2 { color: var(--color-ink); font-size: clamp(2.2rem, 5vw, 3.6rem); max-width: 18ch; line-height: 1.0; margin-bottom: var(--space-3); }
+  .form-head p { margin-top: var(--space-4); color: var(--color-ink); font-size: 1.25rem; max-width: 52ch; }
+
+  form.register {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3) var(--space-4);
+    max-width: 820px;
+  }
+  .field { display: flex; flex-direction: column; gap: 0.4em; }
+  .field--wide { grid-column: 1 / -1; }
+  .field label {
+    font-family: var(--font-body); font-weight: 700; font-size: 0.78rem;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-petrol-deep);
+  }
+  .field .help {
+    font-size: 0.85rem; color: var(--color-petrol-deep); opacity: 0.75; margin-top: 0.2em;
+  }
+  input[type="text"], input[type="email"], input[type="tel"], textarea {
+    font-family: var(--font-body); font-size: 1.1rem; color: var(--color-ink);
+    background: transparent;
+    border: none; border-bottom: 1.5px solid var(--color-petrol-deep);
+    padding: 0.5em 0; outline: none;
+    border-radius: 0;
+  }
+  input::placeholder, textarea::placeholder { color: var(--color-petrol-deep); opacity: 0.45; }
+  input:focus, textarea:focus { border-bottom-color: var(--color-ink); border-bottom-width: 2.5px; padding-bottom: calc(0.5em - 1px); }
+  textarea { resize: vertical; min-height: 100px; line-height: 1.5; }
+
+  .tile-group {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 0.6em;
+  }
+  .tile {
+    position: relative;
+    display: flex; flex-direction: column;
+    padding: 22px 22px 20px;
+    min-height: 170px;
+    border: 1.5px solid var(--color-ink);
+    color: var(--color-ink);
+    background: transparent;
+    cursor: pointer;
+    transition: background 140ms ease, color 140ms ease;
+  }
+  .tile input { position: absolute; opacity: 0; pointer-events: none; }
+  .tile__num {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 0.78rem; letter-spacing: 0.06em;
+    color: var(--color-petrol-deep); opacity: 0.55;
+  }
+  .tile__title {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 1.7rem; line-height: 1.0; letter-spacing: -0.02em;
+    margin-top: auto;
+    text-wrap: balance;
+  }
+  .tile__meta {
+    margin-top: 0.5em;
+    font-family: var(--font-body); font-size: 0.78rem;
+    letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600;
+    color: var(--color-petrol-deep); opacity: 0.85;
+  }
+  .tile:hover { background: rgba(9,43,78,0.07); }
+  .tile:has(input:checked) {
+    background: var(--color-ink);
+    color: var(--color-rose);
+  }
+  .tile:has(input:checked) .tile__num,
+  .tile:has(input:checked) .tile__meta { color: var(--color-rose); opacity: 0.85; }
+  .tile:has(input:checked)::after {
+    content: "✓";
+    position: absolute; top: 14px; right: 16px;
+    font-family: var(--font-body); font-weight: 700; font-size: 1rem;
+    color: var(--color-rose);
+    line-height: 1;
+  }
+  .tile:focus-within { outline: 2px solid var(--color-ink); outline-offset: 3px; }
+
+  .form-actions {
+    grid-column: 1 / -1;
+    display: flex; justify-content: space-between; align-items: center; gap: var(--space-3);
+    margin-top: var(--space-3);
+    border-top: 1px solid rgba(9,43,78,0.25);
+    padding-top: var(--space-3);
+  }
+  .form-actions .note { font-size: 0.85rem; color: var(--color-petrol-deep); max-width: 36ch; }
+  button.submit {
+    font-family: var(--font-display); font-weight: 800; text-transform: uppercase;
+    font-size: 1.1rem; letter-spacing: 0.04em; color: var(--color-rose);
+    background: var(--color-ink); border: 1px solid var(--color-ink);
+    padding: 1em 1.6em; cursor: pointer;
+    transition: background 120ms ease, color 120ms ease;
+  }
+  button.submit:hover { background: var(--color-petrol-deep); border-color: var(--color-petrol-deep); }
+
+  /* ============ NEWSLETTER ============ */
+  .brief-section {
+    background: var(--color-rose);
+    color: var(--color-ink);
+    padding: var(--space-7) 0;
+  }
+  .brief-section ::selection { background: var(--color-ink); color: var(--color-rose); }
+
+  .brief-head { margin-bottom: var(--space-5); max-width: 720px; }
+  .brief-head .kicker {
+    font-family: var(--font-body); font-weight: 700; font-size: 0.78rem;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-petrol-deep);
+    margin-bottom: var(--space-3);
+  }
+  .brief-head h2 {
+    color: var(--color-ink);
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    max-width: 22ch;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-3);
+  }
+  .brief-head p {
+    margin-top: var(--space-4);
+    color: var(--color-ink);
+    font-size: 1.15rem;
+    max-width: 56ch;
+  }
+
+  .brief-cta {
+    display: inline-flex; align-items: center; gap: 0.7em;
+    font-family: var(--font-display); font-weight: 800;
+    font-size: clamp(1rem, 1.4vw, 1.2rem); letter-spacing: 0.04em;
+    color: var(--color-rose); background: var(--color-ink);
+    border: 1px solid var(--color-ink);
+    padding: 1em 1.6em;
+    text-decoration: none;
+    transition: background 120ms ease, color 120ms ease;
+  }
+  .brief-cta::after { content: "→"; font-family: var(--font-body); }
+  .brief-cta:hover { background: var(--color-petrol-deep); border-color: var(--color-petrol-deep); }
+  .brief-note {
+    margin-top: var(--space-3);
+    font-size: 0.85rem;
+    color: var(--color-petrol-deep);
+    opacity: 0.85;
+    max-width: 56ch;
+  }
+
+  .brief-thanks { display: none; }
+
+  /* ============ FACILITATORS ============ */
+  .who {
+    background: var(--color-petrol);
+    padding: var(--space-7) 0 var(--space-6);
+  }
+  .who .grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5);
+    border-top: 1px solid var(--color-petrol-high);
+    padding-top: var(--space-5);
+  }
+  .who h2 { color: var(--color-rose); font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: var(--space-3); letter-spacing: -0.02em; }
+  .who .kicker { font-family: var(--font-display); font-weight: 300; letter-spacing: 0; color: var(--color-petrol-high); font-size: 1.15rem; max-width: 52ch; margin-bottom: var(--space-5); line-height: 1.35; }
+  .who .person h3.name {
+    font-family: var(--font-display); font-weight: 800;
+    color: var(--color-rose); font-size: 2rem; letter-spacing: -0.015em; line-height: 1.05; margin-bottom: var(--space-2);
+  }
+  .who .person .role { font-family: var(--font-body); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-petrol-high); margin-bottom: var(--space-3); }
+  .who .person p { color: var(--color-ink); font-size: 1.05rem; max-width: 42ch; }
+
+  /* Eye overlays — hand-cut marks. Consistent size across page (~mood-photo eye scale). */
+  .eye-overlay {
+    position: absolute;
+    pointer-events: none;
+    user-select: none;
+    z-index: 5;
+    width: clamp(150px, 14vw, 210px);
+  }
+  .eye-overlay img { width: 100%; height: auto; display: block; }
+
+  .hero .eye-overlay.eye--pink {
+    top: var(--eye-pink-top, 14%); right: var(--eye-pink-right, 5%);
+    transform: rotate(-4deg);
+    z-index: 4;
+  }
+  .hero .eye-overlay.eye--magenta {
+    top: var(--eye-magenta-top, 14%); left: var(--eye-magenta-left, 5%);
+    transform: rotate(5deg);
+    z-index: 4;
+  }
+  .hero .eye-overlay.eye--rainbow {
+    top: var(--eye-rainbow-top, 42%); left: var(--eye-rainbow-left, 26%);
+    transform: rotate(8deg);
+    z-index: 4;
+  }
+  .hero .eye-overlay.eye--gem {
+    top: var(--eye-gem-top, 10%); right: var(--eye-gem-right, 32%);
+    transform: rotate(-12deg);
+    z-index: 3;
+  }
+  .eye-overlay { opacity: var(--eye-opacity, 1); }
+
+  .intro { position: relative; }
+  .intro .eye-overlay {
+    top: 8%; right: -3%;
+    transform: rotate(7deg);
+    z-index: 2;
+  }
+
+  .who { position: relative; }
+  .who .eye-overlay {
+    top: 12%; right: 6%;
+    transform: rotate(-9deg);
+    z-index: 2;
+  }
+
+  /* ============ ROOM / MOOD SECTION ============ */
+  .room {
+    background: var(--color-petrol);
+    padding: var(--space-7) 0 var(--space-6);
+    /* Allow eye overlays to poke past photo edges */
+  }
+  .room h2 { color: var(--color-rose); font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: var(--space-3); letter-spacing: -0.02em; line-height: 1; }
+  .room .kicker { font-family: var(--font-display); font-weight: 300; color: var(--color-petrol-high); font-size: 1.15rem; max-width: 56ch; margin-bottom: var(--space-5); line-height: 1.35; }
+  .room__grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-rows: auto auto;
+    gap: var(--space-3);
+    margin-top: var(--space-4);
+  }
+  .room__photo {
+    position: relative;
+    /* No overflow:hidden — we want eye overlays to break the frame. */
+  }
+  .room__photo .room__img-wrap {
+    overflow: hidden;
+    width: 100%; height: 100%;
+  }
+  .room__photo .room__img-wrap img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .room__photo--a { grid-column: 1; grid-row: 1 / 3; min-height: 460px; }
+  .room__photo--b { grid-column: 2; grid-row: 1; min-height: 220px; }
+  .room__photo--c { grid-column: 2; grid-row: 2; min-height: 220px; }
+
+  .room__photo--a .eye-overlay {
+    top: -7%; left: -6%;
+    width: 30%;
+    transform: rotate(-6deg);
+    z-index: 6;
+  }
+  .room__photo--c .eye-overlay {
+    bottom: -10%; right: -6%;
+    width: 46%;
+    transform: rotate(4deg);
+    z-index: 6;
+  }
+  .room__caption {
+    font-family: var(--font-body); font-weight: 500; font-size: 0.85rem;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--color-petrol-high);
+    margin-top: var(--space-4);
+    max-width: 60ch;
+  }
+
+  /* ============ ANNA-DOREEN FEATURE ============ */
+  .who__feature {
+    margin-top: var(--space-5);
+    padding-top: var(--space-5);
+    border-top: 1px solid var(--color-petrol-high);
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: var(--space-5);
+    align-items: end;
+  }
+  .who__feature img {
+    display: block; width: 100%; height: auto;
+  }
+  .who__feature .quote {
+    font-family: var(--font-display); font-weight: 300;
+    color: var(--color-rose); font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+    line-height: 1.2; letter-spacing: -0.01em;
+    max-width: 28ch;
+  }
+  .who__feature .quote::before { content: "„"; }
+  .who__feature .quote::after { content: "“"; }
+  .who__feature .attrib {
+    margin-top: var(--space-3);
+    font-family: var(--font-body); font-weight: 700; font-size: 0.78rem;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-petrol-high);
+  }
+
+  /* ============ FOOTER ============ */
+  footer.foot {
+    background: var(--color-petrol-deep);
+    padding: var(--space-5) 0 var(--space-4);
+    color: var(--color-petrol-high);
+    font-family: var(--font-body); font-size: 0.78rem;
+    letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700;
+  }
+  footer.foot .row { display: flex; justify-content: space-between; gap: var(--space-3); flex-wrap: wrap; }
+  footer.foot a { text-decoration: none; }
+  footer.foot a:hover { color: var(--color-rose); }
+  footer.foot .mark { color: var(--color-rose); }
+
+  @media (max-width: 880px) {
+    .intro__trio { grid-template-columns: 1fr; }
+    .format-grid { grid-template-columns: 1fr; }
+    .format-tile { min-height: 0; }
+    .sec-head { grid-template-columns: 1fr; gap: var(--space-2); }
+    .sec-head .kicker { grid-column: 1; }
+    form.register { grid-template-columns: 1fr; }
+    .brief-cta { width: 100%; justify-content: center; }
+    .tile-group { grid-template-columns: 1fr; }
+    .who .grid { grid-template-columns: 1fr; }
+    .who__feature { grid-template-columns: 1fr; gap: var(--space-3); padding-top: var(--space-4); margin-top: var(--space-4); }
+    .room__grid { grid-template-columns: 1fr; }
+    .room__photo--a, .room__photo--b, .room__photo--c { grid-column: 1; grid-row: auto; min-height: 280px; }
+    .room__photo--a .eye-overlay { width: 46%; top: -5%; left: -4%; }
+    .room__photo--c .eye-overlay { width: 56%; bottom: -8%; right: -4%; }
+    .eye-overlay { width: clamp(110px, 28vw, 180px); }
+    .hero .eye-overlay.eye--pink    { top: 8%; right: 4%; }
+    .hero .eye-overlay.eye--magenta { top: 38%; left: 4%; }
+    .hero .eye-overlay.eye--rainbow { top: 60%; right: 6%; left: auto; }
+    .hero .eye-overlay.eye--gem     { top: 22%; right: 28%; left: auto; }
+    .intro .eye-overlay { top: 4%; right: -2%; }
+    .who .eye-overlay   { top: 6%; right: 4%; }
+    .form-actions { flex-direction: column; align-items: stretch; }
+    button.submit { width: 100%; }
+    .hero__inner { padding: var(--space-5) 0 var(--space-4); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="top" data-screen-label="00 Header">
+  <div class="container row">
+    <a class="brand-mark" href="#top" aria-label="Klub der Tausend Tränen">
+      <img class="brand-mark__icon" src="assets/logo.png" alt="" aria-hidden="true">
+      <span class="brand-mark__word"><span>Klub der</span><span>1000 Tränen</span></span>
+    </a>
+    <a class="header-cta" href="#formate">Anmelden →</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top" data-screen-label="01 Hero">
+  <div class="hero__photo" role="img" aria-label="Brechende Welle aus der Luft, tiefes Wasser darunter"></div>
+  <div class="hero__overlay"></div>
+  <div class="hero__deepen"></div>
+
+  <div class="eye-overlay eye--pink" aria-hidden="true"><img src="assets/eye-pink.png" alt=""></div>
+  <div class="eye-overlay eye--rainbow" aria-hidden="true"><img src="assets/eye-rainbow.png" alt=""></div>
+  <div class="eye-overlay eye--gem" aria-hidden="true"><img src="assets/eye-gem.png" alt=""></div>
+  <div class="eye-overlay eye--magenta" aria-hidden="true"><img src="assets/eye-magenta.png" alt=""></div>
+  <div class="hero__inner">
+    <div class="container">
+      <div class="hero__pres">präsentiert:</div>
+      <h1 class="hero__title">
+        <span>Sternen&shy;eltern</span>
+      </h1>
+      <h3 class="hero__sub">Vier Wege, an denen wir mit euch arbeiten.</h3>
+      <p class="hero__lead">Für Paare, die ihr Kind verloren haben, während der Schwangerschaft, während oder kurz nach der Geburt. Raum, in dem eure Trauer Platz hat und eure Beziehung nicht zerbricht.</p>
+      <a class="hero__scroll" href="#formate">Formate ansehen</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTRO ============ -->
+<section class="intro" data-screen-label="02 Intro">
+  <div class="eye-overlay eye--black2" aria-hidden="true"><img src="assets/eye-black2.png" alt=""></div>
+  <div class="container">
+    <div class="intro__kicker">Klub der Tausend Tränen · Sterneneltern</div>
+    <h2 class="intro__title">Wir bleiben. <em>Auch wenn andere wegschauen.</em></h2>
+    <p class="intro__lead">Wir sind Jonas Zimmermann und Anna-Doreen. Wir arbeiten mit Paaren, deren Kind gestorben ist. Nicht mit der Trauer allein, sondern mit dem, was die Trauer mit eurer Beziehung macht, und mit dem, was eure Beziehung jetzt braucht, um zu tragen.</p>
+
+    <div class="intro__trio">
+      <div>
+        <h4>Loyal</h4>
+        <p>Wir bleiben. Auch nach dem Workshop. Auch nach Jahren.</p>
+      </div>
+      <div>
+        <h4>Leicht</h4>
+        <p>Keine schwere Inszenierung. Das Material atmet, auch wenn der Inhalt schwer ist.</p>
+      </div>
+      <div>
+        <h4>Tiefgründig</h4>
+        <p>Hier wird nichts beschönigt. Wer ankommt, wird ernst genommen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FORMATS ============ -->
+<section class="formats" id="formate" data-screen-label="03 Formate">
+  <div class="container">
+    <div class="sec-head">
+      <span class="num">Formate</span>
+      <h2>Vier Wege, mit&nbsp;uns zu arbeiten</h2>
+      <div class="kicker">Wählt das Format, das gerade passt. Wenn ihr unsicher seid: kommt zum Info-Abend, das verpflichtet euch zu nichts.</div>
+    </div>
+
+    <div class="format-grid">
+      <!-- Tile 01 -->
+      <article class="format-tile" id="workshop">
+        <div class="format-tile__num">— 01 · Workshop Leipzig</div>
+        <h3 class="format-tile__title">Workshop Leipzig</h3>
+        <p class="format-tile__echo">Sterneneltern, ein Workshop für Paare.</p>
+        <p class="format-tile__desc">Vier Stunden für euch zwei, in einer kleinen Gruppe von höchstens vier Paaren. Wir schauen, wo die Trauer eure Beziehung gerade fordert, und was sie jetzt braucht, um zu tragen.</p>
+        <div class="format-tile__meta">
+          <div class="meta-line-a">4 Stunden · 2 bis 4 Paare · Leipzig Plagwitz</div>
+          <div class="meta-line-b">Sa. 14. März 2026, 14 bis 18 Uhr · 240 € pro Paar</div>
+        </div>
+        <a class="format-tile__cta" href="mailto:hallo@klub-1000-traenen.de?subject=Anmeldung%20Workshop%20Leipzig">Jetzt anfragen</a>
+      </article>
+
+      <!-- Tile 02 -->
+      <article class="format-tile" id="gruppe">
+        <div class="format-tile__num">— 02 · Gruppe 2027</div>
+        <h3 class="format-tile__title">Gruppe 2027</h3>
+        <p class="format-tile__echo">Feste Begleitung über sechs Termine.</p>
+        <p class="format-tile__desc">Vier Paare, die sich alle zwei Wochen treffen. Wer mitgeht, geht den ganzen Weg mit denselben Menschen, statt jedes Mal neu anzukommen.</p>
+        <div class="format-tile__meta">
+          <div class="meta-line-a">8 Wochen · 4 Sitzungen · 4 Paare</div>
+          <div class="meta-line-b">Nächste Gruppe ab Mai 2027 · 680 € pro Paar</div>
+        </div>
+        <a class="format-tile__cta" href="mailto:hallo@klub-1000-traenen.de?subject=Anmeldung%20Gruppe%202027">Jetzt anfragen</a>
+      </article>
+
+      <!-- Tile 03 -->
+      <article class="format-tile" id="einzelsessions">
+        <div class="format-tile__num">— 03 · Einzelsessions</div>
+        <h3 class="format-tile__title">Einzelsessions für Paare</h3>
+        <p class="format-tile__echo">1:2, nur ihr und wir.</p>
+        <p class="format-tile__desc">Neunzig Minuten allein mit uns. Eine moderiert, eine schaut, was zwischen euch geschieht. Für das, was in einer Gruppe nicht gesagt werden kann oder noch zu nah ist.</p>
+        <div class="format-tile__meta">
+          <div class="meta-line-a">90 Minuten · Berlin oder online</div>
+          <div class="meta-line-b">Termine flexibel, nach Absprache · 180 € pro Sitzung</div>
+        </div>
+        <a class="format-tile__cta" href="mailto:hallo@klub-1000-traenen.de?subject=Anmeldung%20Einzelsessions">Jetzt anfragen</a>
+      </article>
+
+      <!-- Tile 04 -->
+      <article class="format-tile" id="infoabend">
+        <div class="format-tile__num">— 04 · Info-Abend</div>
+        <h3 class="format-tile__title">Info-Abend</h3>
+        <p class="format-tile__echo">Kostenlos, online, unverbindlich.</p>
+        <p class="format-tile__desc">Eine Stunde online. Wir erzählen, wie wir arbeiten, und ihr stellt die Fragen, die ihr habt. Kein Druck, sich danach für irgendetwas zu entscheiden.</p>
+        <div class="format-tile__meta">
+          <div class="meta-line-a">60 Minuten · online</div>
+          <div class="meta-line-b">15. Oktober 2026, 20 Uhr · kostenlos</div>
+        </div>
+        <a class="format-tile__cta" href="mailto:hallo@klub-1000-traenen.de?subject=Anmeldung%20Info-Abend">Jetzt anfragen</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEWSLETTER ============ -->
+<section class="brief-section" id="brief" data-screen-label="04 Brief aus dem Klub">
+  <div class="container">
+    <div class="brief-head">
+      <div class="kicker">Briefe aus dem Klub</div>
+      <h2>Höchstens einmal im Monat. Nie, wenn es nichts zu sagen gibt.</h2>
+      <p>Wir schreiben, wenn ein Workshop ansteht, wenn eine neue Gruppe startet, oder wenn wir etwas teilen wollen, das uns selbst bewegt hat. Keine Werbung, keine Kalenderpflege. Du kannst dich jederzeit wieder austragen.</p>
+    </div>
+
+    <a class="brief-cta" href="https://07864974.sibforms.com/serve/MUIFAIMwJQ8RhP7nKSZ8VomcUi6Npt6qS72df58IOm9Tz4IQw9bAbg4ChXZS6mN9qS9whFLuo4GgrDKa1lsoSSaJjGW1igKDW3D8kD7hr87VEX_UN3HWE5ujHJwK56_34VlO1bagSEezXY1yfNw0Hw-RcFCzJc-ByUOHdYsZhbyxDW47CIZS1bdfCb7NiIHIxgjaQ-Hyq5GKvdjS0g==" target="_blank" rel="noopener">Jetzt zum Newsletter anmelden</a>
+    <p class="brief-note">Führt zu einem Anmelde-Formular bei Brevo. Du kannst dich jederzeit wieder austragen.</p>
+  </div>
+</section>
+
+<!-- ============ WHO ============ -->
+<section class="who" data-screen-label="05 Wer wir sind">
+  <div class="eye-overlay eye--green" aria-hidden="true"><img src="assets/eye-green.png" alt=""></div>
+  <div class="container">
+    <h2>Wer wir sind</h2>
+    <div class="kicker">Zwei Menschen, die selbst Sterneneltern sind.</div>
+
+    <div class="grid">
+      <div class="person">
+        <h3 class="name">Jonas Zimmermann</h3>
+        <div class="role">Trauerbegleiter · Paartherapeut</div>
+        <p>Arbeitet seit zehn Jahren mit Paaren in Krisen. Baut die Kollagen des Klubs von Hand. Glaubt daran, dass Trauer leichter wird, wenn sie geteilt werden darf, und dass Beziehungen das wichtigste Werkzeug dabei sind.</p>
+      </div>
+      <div class="person">
+        <h3 class="name">Anna-Doreen</h3>
+        <div class="role">Psychologische Beraterin · Sterneneltern-Begleitung</div>
+        <p>Begleitet seit acht Jahren Familien nach Verlust in der Schwangerschaft, während oder kurz nach der Geburt. Mit-Gründerin des Klubs. Wenn sie spricht, dann klar und ohne Therapeuten-Jargon.</p>
+      </div>
+    </div>
+    <div class="who__feature">
+      <img src="assets/anna-doreen.jpg" alt="Anna-Doreen, sitzend, Blumenstrauß im Vordergrund">
+      <div>
+        <p class="quote">Wir bleiben, auch wenn andere wegschauen. Auch nach Jahren.</p>
+        <div class="attrib">Anna-Doreen</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ UNSER RAUM ============ -->
+<section class="room" data-screen-label="06 Unser Raum">
+  <div class="container">
+    <h2>Unser Raum</h2>
+    <div class="kicker">Leipzig Plagwitz. Holzboden, weiche Sitzkissen, Blumen auf dem Tisch. Ein geschützter Ort, der nicht nach Praxis riecht.</div>
+
+    <div class="room__grid">
+      <div class="room__photo room__photo--a">
+        <div class="room__img-wrap"><img src="assets/room-tulips.jpg" alt="Workshop-Raum: Sitzkissen auf Yogamatten, Tulpen in der Mitte, Salzlampe im Hintergrund"></div>
+        <div class="eye-overlay" aria-hidden="true"><img src="assets/eye-cream.png" alt=""></div>
+      </div>
+      <div class="room__photo room__photo--b">
+        <div class="room__img-wrap"><img src="assets/room-sofa.jpg" alt="Empfangsbereich: rosafarbenes Sofa, Blumenstrauß, Tassen auf goldenem Beistelltisch"></div>
+      </div>
+      <div class="room__photo room__photo--c">
+        <div class="room__img-wrap"><img src="assets/hands.jpg" alt="Zwei Personen halten Hände, Blumen im Vordergrund"></div>
+        <div class="eye-overlay" aria-hidden="true"><img src="assets/eye-black.png" alt=""></div>
+      </div>
+    </div>
+
+    <p class="room__caption">Workshops und Gruppen finden hier statt. Einzelsessions nach Absprache auch online.</p>
+  </div>
+</section>
+<footer class="foot" data-screen-label="06 Footer">
+  <div class="container row">
+    <span class="mark">Klub der Tausend Tränen</span>
+    <span>Kontakt · <a href="mailto:hallo@klub-1000-traenen.de">hallo@klub-1000-traenen.de</a></span>
+    <span><a href="#">Impressum</a> · <a href="#">Datenschutz</a></span>
+  </div>
+</footer>
+
+<script>
+  // (Newsletter submission removed — form replaced with external Brevo link.)
+</script>
+
+<script>
+  // Tweak defaults — host rewrites this block on disk when user changes values.
+  window.TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "pinkTop": 72,
+    "pinkRight": 5,
+    "magentaTop": 14,
+    "magentaLeft": 5,
+    "gemTop": 10,
+    "gemRight": 32,
+    "rainbowTop": 42,
+    "rainbowLeft": 26,
+    "eyeOpacity": 1
+  }/*EDITMODE-END*/;
+</script>
+</body>
+</html>
