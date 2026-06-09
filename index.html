@@ -75,24 +75,24 @@
     display: flex; align-items: flex-end;
   }
   .hero__photo {
-    position: absolute; inset: 0;
+    position: absolute; inset: 0; z-index: 0;
     background: url("assets/wave-deep.jpg") center center / cover no-repeat;
     background-color: var(--color-ink);
   }
   .hero__overlay {
-    position: absolute; inset: 0;
+    position: absolute; inset: 0; z-index: 0;
     background-color: var(--color-ink);
     mix-blend-mode: multiply;
     opacity: 0.72;
   }
   /* second deepening pass at the bottom for headline contrast — solid, no gradient on text */
   .hero__deepen {
-    position: absolute; inset: 0;
+    position: absolute; inset: 0; z-index: 0;
     background:
       linear-gradient(180deg, rgba(7,51,54,0.0) 0%, rgba(7,51,54,0.0) 50%, rgba(9,43,78,0.55) 100%);
   }
   .hero__inner {
-    position: relative; z-index: 2;
+    position: relative; z-index: 3;
     width: 100%;
     padding: var(--space-6) 0 var(--space-5);
   }
@@ -163,13 +163,51 @@
     margin-top: var(--space-5);
     display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4);
     border-top: 1px solid var(--color-petrol-high);
-    padding-top: var(--space-4);
+    padding-top: var(--space-5);
   }
-  .intro__trio div h4 {
-    font-family: var(--font-display); font-weight: 800;
-    color: var(--color-rose); font-size: 1.5rem; margin: 0 0 var(--space-2); letter-spacing: -0.01em;
+  .intro__trio .layer__num {
+    font-family: var(--font-body); font-weight: 700; font-size: 0.78rem;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-petrol-high);
+    margin-bottom: var(--space-3);
   }
-  .intro__trio div p { color: var(--color-ink); font-size: 1rem; margin: 0; max-width: 32ch; }
+  .intro__trio .layer__num strong { color: var(--color-rose); font-weight: 700; margin-right: 0.5em; }
+  .intro__trio .layer__q {
+    font-family: var(--font-display); font-weight: 300;
+    color: var(--color-rose); font-size: clamp(1.25rem, 1.9vw, 1.6rem);
+    line-height: 1.25; letter-spacing: -0.005em;
+    margin: 0 0 var(--space-3);
+    max-width: 22ch;
+  }
+  .intro__trio .layer__q::before { content: "„"; }
+  .intro__trio .layer__q::after { content: "“"; }
+  .intro__trio .layer__tag {
+    color: var(--color-ink); font-size: 1rem; margin: 0; max-width: 32ch;
+  }
+
+  .intro__bridge {
+    margin-top: var(--space-6);
+    padding-top: var(--space-5);
+    border-top: 1px solid var(--color-petrol-high);
+    display: flex; align-items: center; justify-content: space-between;
+    gap: var(--space-4); flex-wrap: wrap;
+  }
+  .intro__bridge p {
+    font-family: var(--font-display); font-weight: 300;
+    color: var(--color-rose); font-size: clamp(1.25rem, 2vw, 1.65rem);
+    line-height: 1.25; max-width: 38ch; margin: 0;
+  }
+  .intro__cta {
+    display: inline-flex; align-items: center; gap: 0.6em;
+    font-family: var(--font-body); font-weight: 600;
+    text-transform: uppercase; font-size: 0.78rem; letter-spacing: 0.18em;
+    color: var(--color-petrol-deep);
+    background: var(--color-rose);
+    padding: 0.85em 1.3em;
+    border: 1px solid var(--color-rose);
+    text-decoration: none;
+    transition: background 120ms ease, color 120ms ease;
+  }
+  .intro__cta:hover { background: transparent; color: var(--color-rose); }
 
   /* ============ FORMATS ============ */
   .formats {
@@ -413,7 +451,7 @@
     padding: var(--space-7) 0 var(--space-6);
   }
   .who .grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5);
+    display: grid; grid-template-columns: 1fr; gap: var(--space-6);
     border-top: 1px solid var(--color-petrol-high);
     padding-top: var(--space-5);
   }
@@ -425,6 +463,40 @@
   }
   .who .person .role { font-family: var(--font-body); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-petrol-high); margin-bottom: var(--space-3); }
   .who .person p { color: var(--color-ink); font-size: 1.05rem; max-width: 42ch; }
+  .who .person__photo {
+    display: block;
+    width: 240px; height: auto;
+    margin: 0 0 var(--space-3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35), 0 2px 6px rgba(0,0,0,0.18);
+  }
+  .who .person--feature {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    grid-template-rows: auto auto;
+    column-gap: var(--space-4);
+    row-gap: var(--space-3);
+    align-items: start;
+  }
+  .who .person--feature .person__photo {
+    grid-column: 1; grid-row: 1;
+    width: 100%;
+    margin: 0;
+  }
+  .who .person--feature .person__quote {
+    grid-column: 2; grid-row: 1;
+    align-self: center;
+    font-family: var(--font-display); font-weight: 300;
+    color: var(--color-rose); font-size: clamp(1.6rem, 2.8vw, 2.3rem);
+    line-height: 1.2; letter-spacing: -0.01em;
+    max-width: 24ch;
+  }
+  .who .person--feature .person__quote::before { content: "„"; }
+  .who .person--feature .person__quote::after { content: "“"; }
+  .who .person--feature .person__body {
+    grid-column: 1 / -1; grid-row: 2;
+    margin-top: var(--space-2);
+  }
+  .who .person--feature .person__body p { max-width: 64ch; }
 
   /* Eye overlays — hand-cut marks. Consistent size across page (~mood-photo eye scale). */
   .eye-overlay {
@@ -436,25 +508,33 @@
   }
   .eye-overlay img { width: 100%; height: auto; display: block; }
 
+  /* Hero decoration safe zone — occupies only the area ABOVE the text block.
+     Eyes positioned with % land relative to THIS box, never the full hero,
+     so they can’t drift onto the title/lead at any viewport size. */
+  .hero__deco {
+    position: absolute;
+    inset: 0 0 var(--hero-text-zone, clamp(340px, 54vh, 560px)) 0;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .hero__deco .eye-overlay { z-index: auto; }
+
   .hero .eye-overlay.eye--pink {
-    top: var(--eye-pink-top, 14%); right: var(--eye-pink-right, 5%);
+    top: var(--eye-pink-top, 22%); right: var(--eye-pink-right, 5%);
     transform: rotate(-4deg);
-    z-index: 4;
   }
   .hero .eye-overlay.eye--magenta {
-    top: var(--eye-magenta-top, 14%); left: var(--eye-magenta-left, 5%);
+    top: var(--eye-magenta-top, 22%); left: var(--eye-magenta-left, 30%);
     transform: rotate(5deg);
-    z-index: 4;
   }
   .hero .eye-overlay.eye--rainbow {
-    top: var(--eye-rainbow-top, 42%); left: var(--eye-rainbow-left, 26%);
+    top: var(--eye-rainbow-top, auto); bottom: var(--eye-rainbow-bottom, 4%);
+    left: var(--eye-rainbow-left, 32%);
     transform: rotate(8deg);
-    z-index: 4;
   }
   .hero .eye-overlay.eye--gem {
-    top: var(--eye-gem-top, 10%); right: var(--eye-gem-right, 32%);
+    top: var(--eye-gem-top, 14%); right: var(--eye-gem-right, 22%);
     transform: rotate(-12deg);
-    z-index: 3;
   }
   .eye-overlay { opacity: var(--eye-opacity, 1); }
 
@@ -547,6 +627,86 @@
     letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-petrol-high);
   }
 
+  /* ============ TERMINE ============ */
+  .termine {
+    background: var(--color-petrol-deep);
+    padding: var(--space-7) 0 var(--space-6);
+    position: relative;
+    overflow: hidden;
+  }
+  .termine .eye-overlay {
+    top: var(--space-5); right: 4%;
+    transform: rotate(6deg);
+    z-index: 1;
+  }
+  .termine > .container { position: relative; z-index: 2; }
+  .termine .sec-head { margin-bottom: var(--space-4); }
+  .termine .sec-head h2 {
+    color: var(--color-rose);
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    letter-spacing: -0.02em; line-height: 1;
+  }
+  .termine .sec-head .num { color: var(--color-petrol-high); }
+  .termine .sec-head .kicker { color: var(--color-petrol-high); font-size: 1.05rem; line-height: 1.4; max-width: 56ch; }
+
+  .termine__list { list-style: none; padding: 0; margin: var(--space-4) 0 0; }
+  .termine__row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: var(--space-4);
+    padding: var(--space-3) 0;
+    border-top: 1px solid var(--color-petrol-high);
+    align-items: baseline;
+  }
+  .termine__row:last-child { border-bottom: 1px solid var(--color-petrol-high); }
+  .termine__date {
+    font-family: var(--font-display);
+    display: flex; flex-direction: column; gap: 0.15em;
+    line-height: 0.9;
+  }
+  .termine__date strong {
+    font-weight: 800;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    letter-spacing: -0.02em;
+    color: var(--color-rose);
+  }
+  .termine__date span {
+    font-family: var(--font-body); font-weight: 600;
+    font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--color-petrol-high);
+  }
+  .termine__title {
+    font-family: var(--font-display); font-weight: 800;
+    color: var(--color-rose);
+    font-size: clamp(1.3rem, 2vw, 1.7rem);
+    letter-spacing: -0.015em; line-height: 1.05;
+    margin: 0 0 0.3em;
+  }
+  .termine__meta {
+    font-family: var(--font-body); font-weight: 500;
+    font-size: 0.92rem; color: var(--color-petrol-high);
+    line-height: 1.45;
+  }
+
+  .termine__row--highlight { grid-template-columns: 180px 1fr auto; }
+  .termine__row--highlight .termine__date span,
+  .termine__row--highlight .termine__meta { color: var(--color-rose); }
+  .termine__cta {
+    align-self: center;
+    display: inline-flex; align-items: center; gap: 0.6em;
+    padding: 0.7em 1.1em;
+    font-family: var(--font-body); font-weight: 600;
+    font-size: 0.72rem; letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-petrol-deep); background: var(--color-rose);
+    text-decoration: none;
+    border: 1px solid var(--color-rose);
+    transition: background 120ms ease, color 120ms ease;
+    white-space: nowrap;
+  }
+  .termine__cta:hover { background: transparent; color: var(--color-rose); }
+  .termine__cta::after { content: "→"; font-family: var(--font-body); }
+
   /* ============ FOOTER ============ */
   footer.foot {
     background: var(--color-petrol-deep);
@@ -570,16 +730,24 @@
     .brief-cta { width: 100%; justify-content: center; }
     .tile-group { grid-template-columns: 1fr; }
     .who .grid { grid-template-columns: 1fr; }
+    .who .person--feature { grid-template-columns: 1fr; }
+    .who .person--feature .person__photo { grid-row: auto; }
+    .who .person--feature .person__quote { grid-column: 1; grid-row: auto; }
+    .who .person--feature .person__body { grid-row: auto; }
+    .termine__row { grid-template-columns: 100px 1fr; gap: var(--space-3); }
+    .termine__row--highlight { grid-template-columns: 100px 1fr; }
+    .termine__row--highlight .termine__cta { grid-column: 1 / -1; justify-self: start; }
     .who__feature { grid-template-columns: 1fr; gap: var(--space-3); padding-top: var(--space-4); margin-top: var(--space-4); }
     .room__grid { grid-template-columns: 1fr; }
     .room__photo--a, .room__photo--b, .room__photo--c { grid-column: 1; grid-row: auto; min-height: 280px; }
     .room__photo--a .eye-overlay { width: 46%; top: -5%; left: -4%; }
     .room__photo--c .eye-overlay { width: 56%; bottom: -8%; right: -4%; }
     .eye-overlay { width: clamp(110px, 28vw, 180px); }
-    .hero .eye-overlay.eye--pink    { top: 8%; right: 4%; }
-    .hero .eye-overlay.eye--magenta { top: 38%; left: 4%; }
-    .hero .eye-overlay.eye--rainbow { top: 60%; right: 6%; left: auto; }
-    .hero .eye-overlay.eye--gem     { top: 22%; right: 28%; left: auto; }
+    .hero__deco { inset: 0 0 var(--hero-text-zone-sm, clamp(380px, 60svh, 520px)) 0; }
+    .hero .eye-overlay.eye--pink    { top: 10%; right: 4%; }
+    .hero .eye-overlay.eye--magenta { top: 50%; left: 4%; }
+    .hero .eye-overlay.eye--rainbow { top: auto; bottom: 4%; left: 6%; right: auto; }
+    .hero .eye-overlay.eye--gem     { top: 6%; right: 32%; left: auto; }
     .intro .eye-overlay { top: 4%; right: -2%; }
     .who .eye-overlay   { top: 6%; right: 4%; }
     .form-actions { flex-direction: column; align-items: stretch; }
@@ -607,50 +775,122 @@
   <div class="hero__overlay"></div>
   <div class="hero__deepen"></div>
 
-  <div class="eye-overlay eye--pink" aria-hidden="true"><img src="assets/eye-pink.png" alt=""></div>
-  <div class="eye-overlay eye--rainbow" aria-hidden="true"><img src="assets/eye-rainbow.png" alt=""></div>
-  <div class="eye-overlay eye--gem" aria-hidden="true"><img src="assets/eye-gem.png" alt=""></div>
-  <div class="eye-overlay eye--magenta" aria-hidden="true"><img src="assets/eye-magenta.png" alt=""></div>
+  <div class="hero__deco" aria-hidden="true">
+    <div class="eye-overlay eye--gem"><img src="assets/eye-gem.png" alt=""></div>
+    <div class="eye-overlay eye--magenta"><img src="assets/eye-magenta.png" alt=""></div>
+  </div>
   <div class="hero__inner">
     <div class="container">
       <div class="hero__pres">präsentiert:</div>
       <h1 class="hero__title">
         <span>Sternen&shy;eltern</span>
       </h1>
-      <h3 class="hero__sub">Vier Wege, an denen wir mit euch arbeiten.</h3>
-      <p class="hero__lead">Für Paare, die ihr Kind verloren haben, während der Schwangerschaft, während oder kurz nach der Geburt. Raum, in dem eure Trauer Platz hat und eure Beziehung nicht zerbricht.</p>
+      <h3 class="hero__sub">Stärkt euch als Paar in eurem Verlust.</h3>
+      <p class="hero__lead">Für Paare, die während oder kurz nach der Schwangerschaft ihr Kind verloren haben.
+Ein Raum, in dem eure Trauer Platz hat und euch wieder verbindet.</p>
       <a class="hero__scroll" href="#formate">Formate ansehen</a>
     </div>
   </div>
 </section>
 
+<!-- ============ TERMINE ============ -->
+<section class="termine" data-screen-label="02 Termine">
+  <div class="eye-overlay eye--rainbow-tears" aria-hidden="true"><img src="assets/eye-rainbow.png" alt=""></div>
+  <div class="container">
+    <div class="sec-head">
+      <span class="num">Termine</span>
+      <h2>Was wann wo passiert</h2>
+    </div>
+
+    <ol class="termine__list">
+      <li class="termine__row">
+        <div class="termine__date"><strong>08</strong><span>Juli 2026</span></div>
+        <div class="termine__body">
+          <h3 class="termine__title">Info-Abend</h3>
+          <div class="termine__meta">Online · 20 Uhr · kostenlos</div>
+        </div>
+      </li>
+
+      <li class="termine__row">
+        <div class="termine__date"><strong>20</strong><span>August 2026</span></div>
+        <div class="termine__body">
+          <h3 class="termine__title">Info-Abend</h3>
+          <div class="termine__meta">Online · 20 Uhr · kostenlos</div>
+        </div>
+      </li>
+
+      <li class="termine__row">
+        <div class="termine__date"><strong>14</strong><span>September 2026</span></div>
+        <div class="termine__body">
+          <h3 class="termine__title">Info-Abend</h3>
+          <div class="termine__meta">Online · 20 Uhr · kostenlos</div>
+        </div>
+      </li>
+
+      <li class="termine__row">
+        <div class="termine__date"><strong>15</strong><span>Oktober 2026</span></div>
+        <div class="termine__body">
+          <h3 class="termine__title">Gedenktag Sternenkinder</h3>
+          <div class="termine__meta">Weltweiter Gedenktag, offen für alle</div>
+        </div>
+      </li>
+
+      <li class="termine__row termine__row--highlight">
+        <div class="termine__date"><strong>27</strong><span>Oktober 2026</span></div>
+        <div class="termine__body">
+          <h3 class="termine__title">Workshop Leipzig</h3>
+          <div class="termine__meta">Leipzig Plagwitz · 14 bis 18 Uhr · 240 € pro Paar</div>
+        </div>
+        <a class="termine__cta" href="https://buy.stripe.com/test_cNicN70sZdaF9qg1xY08g00" target="_blank" rel="noopener">Jetzt buchen</a>
+      </li>
+
+      <li class="termine__row">
+        <div class="termine__date"><strong>März</strong><span>2027</span></div>
+        <div class="termine__body">
+          <h3 class="termine__title">Gruppe 2027 startet</h3>
+          <div class="termine__meta">Sechs Termine, alle zwei Wochen · Leipzig Plagwitz · 680 € pro Paar</div>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
 <!-- ============ INTRO ============ -->
-<section class="intro" data-screen-label="02 Intro">
+<section class="intro" data-screen-label="03 Intro">
   <div class="eye-overlay eye--black2" aria-hidden="true"><img src="assets/eye-black2.png" alt=""></div>
   <div class="container">
-    <div class="intro__kicker">Klub der Tausend Tränen · Sterneneltern</div>
-    <h2 class="intro__title">Wir bleiben. <em>Auch wenn andere wegschauen.</em></h2>
+    <div class="intro__kicker">
+</div>
+    <h2 class="intro__title">Wie wir arbeiten. <em>Drei Ebenen.</em></h2>
     <p class="intro__lead">Wir sind Jonas Zimmermann und Anna-Doreen. Wir arbeiten mit Paaren, deren Kind gestorben ist. Nicht mit der Trauer allein, sondern mit dem, was die Trauer mit eurer Beziehung macht, und mit dem, was eure Beziehung jetzt braucht, um zu tragen.</p>
 
     <div class="intro__trio">
       <div>
-        <h4>Loyal</h4>
-        <p>Wir bleiben. Auch nach dem Workshop. Auch nach Jahren.</p>
+        <div class="layer__num">01 MEINE TRAUER</div>
+        <p class="layer__q">Was hat sich in mir verändert, seit unser Kind gestorben ist?</p>
+        <p class="layer__tag">Scham, Identität, das Recht zu trauern.</p>
       </div>
       <div>
-        <h4>Leicht</h4>
-        <p>Keine schwere Inszenierung. Das Material atmet, auch wenn der Inhalt schwer ist.</p>
+        <div class="layer__num"><strong>02</strong> Unsere Familie</div>
+        <p class="layer__q">Was bedeutet der Verlust für die Kinder, die da sind, und die wir uns wünschen?</p>
+        <p class="layer__tag">Geschwister, Kinderwunsch, die Angst vor erneutem Verlust.</p>
       </div>
       <div>
-        <h4>Tiefgründig</h4>
-        <p>Hier wird nichts beschönigt. Wer ankommt, wird ernst genommen.</p>
+        <div class="layer__num"><strong>03</strong> Unsere Beziehung</div>
+        <p class="layer__q">Was ist zwischen uns passiert, das wir noch nicht ausgesprochen haben?</p>
+        <p class="layer__tag">Unterschiedliches Trauern, Distanz, das Ungesagte.</p>
       </div>
+    </div>
+
+    <div class="intro__bridge">
+      <p>Wir arbeiten in unseren Formaten auf diesen drei Ebenen.</p>
+      <a class="intro__cta" href="#formate">Jetzt buchen <span aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
 
 <!-- ============ FORMATS ============ -->
-<section class="formats" id="formate" data-screen-label="03 Formate">
+<section class="formats" id="formate" data-screen-label="04 Formate">
   <div class="container">
     <div class="sec-head">
       <span class="num">Formate</span>
@@ -667,9 +907,9 @@
         <p class="format-tile__desc">Vier Stunden für euch zwei, in einer kleinen Gruppe von höchstens vier Paaren. Wir schauen, wo die Trauer eure Beziehung gerade fordert, und was sie jetzt braucht, um zu tragen.</p>
         <div class="format-tile__meta">
           <div class="meta-line-a">4 Stunden · 2 bis 4 Paare · Leipzig Plagwitz</div>
-          <div class="meta-line-b">Sa. 14. März 2026, 14 bis 18 Uhr · 240 € pro Paar</div>
+          <div class="meta-line-b">Sa. 28. Oktober 2026, 14 bis 18 Uhr · 240 € pro Paar</div>
         </div>
-        <a class="format-tile__cta" href="mailto:hallo@klub-1000-traenen.de?subject=Anmeldung%20Workshop%20Leipzig">Jetzt anfragen</a>
+        <a class="format-tile__cta" href="https://buy.stripe.com/test_cNicN70sZdaF9qg1xY08g00" target="_blank" rel="noopener">Jetzt buchen</a>
       </article>
 
       <!-- Tile 02 -->
@@ -680,9 +920,9 @@
         <p class="format-tile__desc">Vier Paare, die sich alle zwei Wochen treffen. Wer mitgeht, geht den ganzen Weg mit denselben Menschen, statt jedes Mal neu anzukommen.</p>
         <div class="format-tile__meta">
           <div class="meta-line-a">8 Wochen · 4 Sitzungen · 4 Paare</div>
-          <div class="meta-line-b">Nächste Gruppe ab Mai 2027 · 680 € pro Paar</div>
+          <div class="meta-line-b">Nächste Gruppe ab März 2027 · 680 € pro Paar</div>
         </div>
-        <a class="format-tile__cta" href="mailto:hallo@klub-1000-traenen.de?subject=Anmeldung%20Gruppe%202027">Jetzt anfragen</a>
+        <a class="format-tile__cta" href="mailto:hallo@klub-der-1000-traenen.de?subject=Anmeldung%20Gruppe%202027">Jetzt anfragen</a>
       </article>
 
       <!-- Tile 03 -->
@@ -692,10 +932,10 @@
         <p class="format-tile__echo">1:2, nur ihr und wir.</p>
         <p class="format-tile__desc">Neunzig Minuten allein mit uns. Eine moderiert, eine schaut, was zwischen euch geschieht. Für das, was in einer Gruppe nicht gesagt werden kann oder noch zu nah ist.</p>
         <div class="format-tile__meta">
-          <div class="meta-line-a">90 Minuten · Berlin oder online</div>
+          <div class="meta-line-a">90 MINUTEN · LEIPZIG ODER ONLINE</div>
           <div class="meta-line-b">Termine flexibel, nach Absprache · 180 € pro Sitzung</div>
         </div>
-        <a class="format-tile__cta" href="mailto:hallo@klub-1000-traenen.de?subject=Anmeldung%20Einzelsessions">Jetzt anfragen</a>
+        <a class="format-tile__cta" href="mailto:hallo@klub-der-1000-traenen.de?subject=Anmeldung%20Einzelsessions">Jetzt anfragen</a>
       </article>
 
       <!-- Tile 04 -->
@@ -708,14 +948,14 @@
           <div class="meta-line-a">60 Minuten · online</div>
           <div class="meta-line-b">15. Oktober 2026, 20 Uhr · kostenlos</div>
         </div>
-        <a class="format-tile__cta" href="mailto:hallo@klub-1000-traenen.de?subject=Anmeldung%20Info-Abend">Jetzt anfragen</a>
+        <a class="format-tile__cta" href="mailto:hallo@klub-der-1000-traenen.de?subject=Anmeldung%20Info-Abend">Jetzt anfragen</a>
       </article>
     </div>
   </div>
 </section>
 
 <!-- ============ NEWSLETTER ============ -->
-<section class="brief-section" id="brief" data-screen-label="04 Brief aus dem Klub">
+<section class="brief-section" id="brief" data-screen-label="05 Briefe aus dem Klub">
   <div class="container">
     <div class="brief-head">
       <div class="kicker">Briefe aus dem Klub</div>
@@ -723,42 +963,47 @@
       <p>Wir schreiben, wenn ein Workshop ansteht, wenn eine neue Gruppe startet, oder wenn wir etwas teilen wollen, das uns selbst bewegt hat. Keine Werbung, keine Kalenderpflege. Du kannst dich jederzeit wieder austragen.</p>
     </div>
 
-    <a class="brief-cta" href="https://07864974.sibforms.com/serve/MUIFAIMwJQ8RhP7nKSZ8VomcUi6Npt6qS72df58IOm9Tz4IQw9bAbg4ChXZS6mN9qS9whFLuo4GgrDKa1lsoSSaJjGW1igKDW3D8kD7hr87VEX_UN3HWE5ujHJwK56_34VlO1bagSEezXY1yfNw0Hw-RcFCzJc-ByUOHdYsZhbyxDW47CIZS1bdfCb7NiIHIxgjaQ-Hyq5GKvdjS0g==" target="_blank" rel="noopener">Jetzt zum Newsletter anmelden</a>
+    <a class="brief-cta" href="https://app.brevo.com/sib/subscribe/UPDATE-MICH" target="_blank" rel="noopener">Jetzt zum Newsletter anmelden</a>
     <p class="brief-note">Führt zu einem Anmelde-Formular bei Brevo. Du kannst dich jederzeit wieder austragen.</p>
   </div>
 </section>
 
 <!-- ============ WHO ============ -->
-<section class="who" data-screen-label="05 Wer wir sind">
+<section class="who" data-screen-label="06 Wer wir sind">
   <div class="eye-overlay eye--green" aria-hidden="true"><img src="assets/eye-green.png" alt=""></div>
   <div class="container">
     <h2>Wer wir sind</h2>
     <div class="kicker">Zwei Menschen, die selbst Sterneneltern sind.</div>
 
     <div class="grid">
-      <div class="person">
-        <h3 class="name">Jonas Zimmermann</h3>
-        <div class="role">Trauerbegleiter · Paartherapeut</div>
-        <p>Arbeitet seit zehn Jahren mit Paaren in Krisen. Baut die Kollagen des Klubs von Hand. Glaubt daran, dass Trauer leichter wird, wenn sie geteilt werden darf, und dass Beziehungen das wichtigste Werkzeug dabei sind.</p>
+      <div class="person person--feature">
+        <img class="person__photo" src="assets/anna-doreen.jpg" alt="Anna-Doreen, Portrait">
+        <p class="person__quote">Wir bleiben, auch wenn andere wegschauen. Auch nach Jahren.</p>
+        <div class="person__body">
+          <h3 class="name">Anna-Doreen</h3>
+          <div class="role">Psychologische Beraterin · Sterneneltern-Begleitung</div>
+          <p>Begleitet seit acht Jahren Familien nach Verlust in der Schwangerschaft, während oder kurz nach der Geburt. Mit-Gründerin des Klubs. Wenn sie spricht, dann klar und ohne Therapeuten-Jargon.</p>
+        </div>
       </div>
-      <div class="person">
-        <h3 class="name">Anna-Doreen</h3>
-        <div class="role">Psychologische Beraterin · Sterneneltern-Begleitung</div>
-        <p>Begleitet seit acht Jahren Familien nach Verlust in der Schwangerschaft, während oder kurz nach der Geburt. Mit-Gründerin des Klubs. Wenn sie spricht, dann klar und ohne Therapeuten-Jargon.</p>
-      </div>
-    </div>
-    <div class="who__feature">
-      <img src="assets/anna-doreen.jpg" alt="Anna-Doreen, sitzend, Blumenstrauß im Vordergrund">
-      <div>
-        <p class="quote">Wir bleiben, auch wenn andere wegschauen. Auch nach Jahren.</p>
-        <div class="attrib">Anna-Doreen</div>
+      <div class="person person--feature">
+        <img class="person__photo" src="assets/jonas-neu.jpg" alt="Jonas Zimmermann, Portrait">
+        <p class="person__quote">Das Wichtigste, ist zu dir zu stehen.</p>
+        <div class="person__body">
+          <h3 class="name">Jonas Zimmermann</h3>
+          <div class="role">STERNENPAPA · INDIVIDUELLE BEGLEITUNG</div>
+          <p>Ausbildung in Gestalttherapie.
+Fortbildungen in Bindungstraumata NARM, Pre- und Perinathaltherapie, Mediation und Systemischer Beratung. 
+
+
+Ich begleite seit acht Jahren meine Klienten und Leite Gruppenseminare wie die Heldenreise nach Paul Rebiliot und daneben als systemischer Organisationsentwickler mit Teams und Führungskräften.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============ UNSER RAUM ============ -->
-<section class="room" data-screen-label="06 Unser Raum">
+<section class="room" data-screen-label="07 Unser Raum">
   <div class="container">
     <h2>Unser Raum</h2>
     <div class="kicker">Leipzig Plagwitz. Holzboden, weiche Sitzkissen, Blumen auf dem Tisch. Ein geschützter Ort, der nicht nach Praxis riecht.</div>
@@ -780,7 +1025,7 @@
     <p class="room__caption">Workshops und Gruppen finden hier statt. Einzelsessions nach Absprache auch online.</p>
   </div>
 </section>
-<footer class="foot" data-screen-label="06 Footer">
+<footer class="foot" data-screen-label="08 Footer">
   <div class="container row">
     <span class="mark">Klub der Tausend Tränen</span>
     <span>Kontakt · <a href="mailto:hallo@klub-der-1000-traenen.de">hallo@klub-der-1000-traenen.de</a></span>
@@ -792,19 +1037,5 @@
   // (Newsletter submission removed — form replaced with external Brevo link.)
 </script>
 
-<script>
-  // Tweak defaults — host rewrites this block on disk when user changes values.
-  window.TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-    "pinkTop": 72,
-    "pinkRight": 5,
-    "magentaTop": 14,
-    "magentaLeft": 5,
-    "gemTop": 10,
-    "gemRight": 32,
-    "rainbowTop": 42,
-    "rainbowLeft": 26,
-    "eyeOpacity": 1
-  }/*EDITMODE-END*/;
-</script>
 </body>
 </html>
