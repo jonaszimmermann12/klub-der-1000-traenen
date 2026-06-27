@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Einzelbegleitung für Väter — Klub der Tausend Tränen</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-petrol-deep: #073336;
+    --color-petrol:      #11676A;
+    --color-petrol-high: #3A8E91;
+    --color-rose:        #E4B7C6;
+    --color-rose-deep:   #D49DAF;
+    --color-ink:         #092B4E;
+
+    --font-display: "Safiro", "Hanken Grotesk", "Helvetica Neue", system-ui, sans-serif;
+    --font-body:    "Open Sans", system-ui, sans-serif;
+
+    --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2.5rem;
+    --space-5: 4rem;   --space-6: 6rem;  --space-7: 10rem;
+
+    --container: 1200px;
+    --container-text: 760px;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { background: var(--color-rose); color: var(--color-ink); scroll-behavior: smooth; }
+  body { font-family: var(--font-body); font-size: 1.1rem; line-height: 1.55; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  ::selection { background: var(--color-ink); color: var(--color-rose); }
+
+  h1, h2 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.015em; line-height: 0.95; margin: 0; }
+  h3 { font-family: var(--font-display); font-weight: 300; letter-spacing: 0; line-height: 1.05; margin: 0; }
+  p { margin: 0 0 1em 0; text-wrap: pretty; }
+  a { color: inherit; }
+
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 var(--space-3); }
+  .container--text { max-width: var(--container-text); margin: 0 auto; padding: 0 var(--space-3); }
+
+  /* ============ HEADER ============ */
+  header.top {
+    position: relative; z-index: 10;
+    padding: var(--space-3) 0;
+    background: var(--color-ink);
+  }
+  header.top .row {
+    display: flex; justify-content: space-between; align-items: center; gap: var(--space-3);
+  }
+  .brand-mark {
+    display: inline-grid; grid-template-columns: auto auto; align-items: center; gap: 0.7em;
+    text-decoration: none; color: var(--color-rose);
+  }
+  .brand-mark__icon { height: 46px; width: auto; display: block; }
+  .brand-mark__word {
+    font-family: var(--font-display); font-weight: 800; text-transform: uppercase;
+    color: var(--color-rose); line-height: 0.88; letter-spacing: -0.005em;
+    font-size: 0.95rem;
+  }
+  .brand-mark__word span { display: block; }
+  .header-cta {
+    font-family: var(--font-body); font-weight: 600; font-size: 0.78rem;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-rose);
+    text-decoration: none; padding: 0.7em 1.2em;
+    border: 1px solid var(--color-rose);
+    transition: background 120ms ease, color 120ms ease;
+    white-space: nowrap;
+  }
+  .header-cta:hover { background: var(--color-rose); color: var(--color-ink); }
+
+  /* ============ EYE OVERLAYS ============ */
+  .eye-overlay {
+    position: absolute;
+    pointer-events: none;
+    user-select: none;
+    z-index: 5;
+    width: clamp(140px, 13vw, 200px);
+  }
+  .eye-overlay img { width: 100%; height: auto; display: block; }
+
+  /* ============ PAGE HERO (full-bleed) ============ */
+  .page-hero {
+    position: relative;
+    min-height: clamp(520px, 82vh, 820px);
+    background: var(--color-ink);
+    overflow: hidden;
+    display: flex; align-items: flex-end;
+  }
+  .page-hero__photo {
+    position: absolute; inset: 0; z-index: 0;
+    background: url("assets/hero-hand-water.jpg") center center / cover no-repeat;
+    background-color: var(--color-ink);
+  }
+  .page-hero__overlay {
+    position: absolute; inset: 0; z-index: 0;
+    background-color: var(--color-ink);
+    mix-blend-mode: multiply;
+    opacity: 0.62;
+  }
+  .page-hero__deepen {
+    position: absolute; inset: 0; z-index: 0;
+    background: linear-gradient(180deg, rgba(9,43,78,0.0) 0%, rgba(9,43,78,0.0) 42%, rgba(9,43,78,0.78) 100%);
+  }
+  .page-hero__deco { position: absolute; inset: 0 0 48% 0; pointer-events: none; z-index: 2; }
+  .page-hero .eye-overlay.eye--gem { top: 12%; right: 7%; left: auto; transform: rotate(-12deg); }
+  .page-hero__inner {
+    position: relative; z-index: 3;
+    width: 100%;
+    padding: var(--space-6) 0 var(--space-5);
+  }
+  .page-hero__back {
+    display: inline-flex; align-items: center; gap: 0.6em;
+    font-family: var(--font-body); font-weight: 600; font-size: 0.78rem;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-rose);
+    text-decoration: none;
+    margin-bottom: var(--space-5);
+    transition: opacity 120ms ease;
+    opacity: 0.85;
+  }
+  .page-hero__back::before { content: "←"; font-family: var(--font-body); }
+  .page-hero__back:hover { opacity: 1; }
+  .page-hero__kicker {
+    font-family: var(--font-body); font-weight: 700; font-size: 0.78rem;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-rose);
+    opacity: 0.9;
+    margin-bottom: var(--space-3);
+  }
+  .page-hero__title {
+    color: var(--color-rose);
+    font-size: clamp(2.6rem, 6.5vw, 5.4rem);
+    letter-spacing: -0.025em; line-height: 0.95;
+    max-width: 18ch;
+  }
+  .page-hero__sub {
+    margin-top: var(--space-3);
+    font-family: var(--font-display); font-weight: 300;
+    color: var(--color-rose);
+    font-size: clamp(1.5rem, 3.4vw, 2.6rem);
+    line-height: 1.05; letter-spacing: -0.01em;
+  }
+
+  /* ============ PAINPOINTS ============ */
+  .pains {
+    background: var(--color-ink);
+    color: var(--color-rose);
+    padding: var(--space-7) 0 var(--space-6);
+    position: relative; overflow: hidden;
+  }
+  .pains ::selection { background: var(--color-rose); color: var(--color-ink); }
+  .pains .eye-overlay { top: var(--space-5); right: 5%; transform: rotate(7deg); z-index: 1; }
+  .pains > .container { position: relative; z-index: 2; }
+  .pains__kicker {
+    font-family: var(--font-body); font-weight: 700; font-size: 0.78rem;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-rose-deep);
+    margin-bottom: var(--space-3);
+  }
+  .pains__head {
+    color: var(--color-rose);
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    letter-spacing: -0.02em; line-height: 1;
+    max-width: 20ch;
+    margin-bottom: var(--space-5);
+  }
+  .pains__list {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+  }
+  .pain {
+    border-left: 3px solid var(--color-rose);
+    padding: var(--space-2) 0 var(--space-2) var(--space-3);
+    font-family: var(--font-display); font-weight: 300;
+    color: var(--color-rose);
+    font-size: clamp(1.35rem, 1.9vw, 1.7rem);
+    line-height: 1.2; letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  .pain--wide { grid-column: 1 / -1; }
+  .pain--invite {
+    grid-column: 1 / -1;
+    border-left-color: var(--color-rose-deep);
+    color: var(--color-rose);
+    font-weight: 400;
+    background: rgba(228,183,198,0.06);
+    padding: var(--space-3);
+  }
+
+  /* ============ JONAS ============ */
+  .guide {
+    background: var(--color-rose);
+    color: var(--color-ink);
+    padding: var(--space-7) 0 var(--space-7);
+    position: relative; overflow: hidden;
+  }
+  .guide__grid {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: var(--space-5);
+    align-items: start;
+  }
+  .guide__photo {
+    width: 100%; height: auto; display: block;
+    box-shadow: 0 18px 48px rgba(9,43,78,0.28), 0 3px 10px rgba(9,43,78,0.18);
+  }
+  .guide__lead {
+    font-family: var(--font-display); font-weight: 300;
+    color: var(--color-ink);
+    font-size: clamp(1.7rem, 3vw, 2.6rem);
+    line-height: 1.12; letter-spacing: -0.015em;
+    margin: 0 0 var(--space-4);
+    max-width: 24ch;
+  }
+  .guide__lead::before { content: "„"; }
+  .guide__lead::after { content: "“"; }
+  .guide__name {
+    font-family: var(--font-display); font-weight: 800;
+    color: var(--color-ink); font-size: 1.7rem; letter-spacing: -0.015em; line-height: 1;
+    margin: 0 0 var(--space-2);
+  }
+  .guide__role {
+    font-family: var(--font-body); font-weight: 700; font-size: 0.78rem;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-petrol-deep);
+    margin-bottom: var(--space-3);
+  }
+  .guide__body { color: var(--color-ink); font-size: 1.05rem; line-height: 1.6; max-width: 52ch; }
+  .guide__body p { margin-bottom: 1em; }
+
+  .guide__cta-wrap {
+    margin-top: var(--space-5);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-rose-deep);
+  }
+  .guide__cta {
+    display: inline-flex; align-items: center; gap: 0.7em;
+    font-family: var(--font-display); font-weight: 800;
+    font-size: clamp(1rem, 1.5vw, 1.25rem); letter-spacing: 0.02em;
+    color: var(--color-rose); background: var(--color-ink);
+    border: 1px solid var(--color-ink);
+    padding: 1em 1.6em;
+    text-decoration: none;
+    transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
+  }
+  .guide__cta::after { content: "→"; font-family: var(--font-body); }
+  .guide__cta:hover { background: var(--color-petrol-deep); border-color: var(--color-petrol-deep); }
+  .guide__note { margin-top: var(--space-3); font-size: 0.9rem; color: var(--color-petrol-deep); opacity: 0.85; max-width: 48ch; }
+
+  /* ============ FOOTER ============ */
+  footer.foot {
+    background: var(--color-ink);
+    padding: var(--space-5) 0 var(--space-4);
+    color: var(--color-petrol-high);
+    font-family: var(--font-body); font-size: 0.78rem;
+    letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700;
+  }
+  footer.foot .row { display: flex; justify-content: space-between; gap: var(--space-3); flex-wrap: wrap; }
+  footer.foot a { text-decoration: none; }
+  footer.foot a:hover { color: var(--color-rose); }
+  footer.foot .mark { color: var(--color-rose); }
+
+  @media (max-width: 880px) {
+    .page-hero { min-height: clamp(420px, 72svh, 580px); }
+    .page-hero__inner { padding: var(--space-5) 0 var(--space-4); }
+    .page-hero__deco { inset: 0 0 60% 0; }
+    .pains__list { grid-template-columns: 1fr; }
+    .pain--wide { grid-column: auto; }
+    .guide__grid { grid-template-columns: 1fr; gap: var(--space-4); }
+    .guide__photo { max-width: 280px; }
+    .eye-overlay { width: clamp(110px, 26vw, 170px); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="top" data-screen-label="00 Header">
+  <div class="container row">
+    <a class="brand-mark" href="index.html" aria-label="Klub der Tausend Tränen">
+      <img class="brand-mark__icon" src="assets/logo.png" alt="" aria-hidden="true">
+      <span class="brand-mark__word"><span>Klub der</span><span>1000 Tränen</span></span>
+    </a>
+    <a class="header-cta" href="#vorgespraech">Vorgespräch →</a>
+  </div>
+</header>
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero" data-screen-label="01 Einzelbegleitung Väter">
+  <div class="page-hero__photo" role="img" aria-label="Zwei offene Hände im Wasser"></div>
+  <div class="page-hero__overlay"></div>
+  <div class="page-hero__deepen"></div>
+  <div class="page-hero__deco" aria-hidden="true">
+    <div class="eye-overlay eye--gem"><img src="assets/eye-gem.png" alt=""></div>
+  </div>
+  <div class="page-hero__inner">
+    <div class="container">
+      <a class="page-hero__back" href="index.html">Zurück zur Übersicht</a>
+      <div class="page-hero__kicker">Einzelbegleitung · Für Sternenpapas</div>
+      <h1 class="page-hero__title">Einzelbegleitung für Väter mit Verlusterfahrung.</h1>
+      <p class="page-hero__sub">Für Sternenpapas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PAINPOINTS ============ -->
+<section class="pains" data-screen-label="02 Painpoints">
+  <div class="eye-overlay eye--rainbow" aria-hidden="true"><img src="assets/eye-rainbow.png" alt=""></div>
+  <div class="container">
+    <div class="pains__kicker">Vielleicht kennst du das</div>
+    <h2 class="pains__head">Du funktionierst. Aber wer hält dich?</h2>
+    <ul class="pains__list">
+      <li class="pain pain--wide">Du organisierst. Du bist der Fels in der Brandung. Und keiner fragt, wie es dem Fels geht.</li>
+      <li class="pain">Du trauerst nicht weniger. Du trauerst nur leiser. Und keiner hört es.</li>
+      <li class="pain">Sie hat es im Bauch gespürt. Du erst spät. Heißt das, du darfst weniger weinen?</li>
+      <li class="pain">Es war auch dein Kind. Aber im Kreißsaal warst du nur die Begleitperson.</li>
+      <li class="pain">Du hast nicht nur euer Kind verloren. Gerade verlierst du das Gefühl, sie noch zu erreichen.</li>
+      <li class="pain pain--wide">Es gibt Kissen, Bücher, Gruppen, Rituale. Fast alles für sie. Fast nichts für dich.</li>
+      <li class="pain pain--invite">Du musst hier nichts auf Kommando fühlen. Komm, wie du bist.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ JONAS / GUIDE ============ -->
+<section class="guide" id="vorgespraech" data-screen-label="03 Begleitung Jonas">
+  <div class="container">
+    <div class="guide__grid">
+      <img class="guide__photo" src="assets/jonas-neu.jpg" alt="Jonas Zimmermann, Portrait">
+      <div class="guide__text">
+        <p class="guide__lead">Ich begleite Väter durch ihre Verlustkrise zurück zu sich und zu ihr — ohne Emo-Schablone.</p>
+        <h3 class="guide__name">Jonas Zimmermann</h3>
+        <div class="guide__role">Sternenpapa · Individuelle Begleitung</div>
+        <div class="guide__body">
+          <p>Ausbildung in Gestalttherapie. Fortbildungen in Bindungstraumata NARM, Pre- und Perinataltherapie, Mediation und Systemischer Beratung.</p>
+          <p>Ich begleite seit acht Jahren meine Klienten und leite Gruppenseminare wie die Heldenreise nach Paul Rebillot — daneben als systemischer Organisationsentwickler mit Teams und Führungskräften.</p>
+        </div>
+        <div class="guide__cta-wrap">
+          <a class="guide__cta" href="mailto:hallo@klub-der-1000-traenen.de?subject=Vorgespr%C3%A4ch%20Einzelbegleitung">Jetzt Vorgespräch buchen</a>
+          <p class="guide__note">Ein erstes Gespräch, in dem wir schauen, ob es passt. Unverbindlich, kostenlos, in deinem Tempo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot" data-screen-label="04 Footer">
+  <div class="container row">
+    <span class="mark">Klub der Tausend Tränen</span>
+    <span>Kontakt · <a href="mailto:hallo@klub-der-1000-traenen.de">hallo@klub-der-1000-traenen.de</a></span>
+    <span><a href="index.html">Übersicht</a> · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
