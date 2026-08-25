@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://klub-der-1000-traenen.de/sitemap.xml
