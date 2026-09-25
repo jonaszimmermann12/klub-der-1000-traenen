@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Für Paare nach dem Verlust eines Kindes – Klub der Tausend Tränen</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Euch fällt es gerade schwer, gut füreinander da zu sein. Begleitung für Sterneneltern als Paar, in Leipzig und online.">
+<link rel="canonical" href="https://klub-der-1000-traenen.de/paare">
+<meta name="robots" content="noindex">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Klub der Tausend Tränen">
+<meta property="og:locale" content="de_DE">
+<meta property="og:title" content="Für Paare nach dem Verlust eines Kindes – Klub der Tausend Tränen">
+<meta property="og:description" content="Euch fällt es gerade schwer, gut füreinander da zu sein. Begleitung für Sterneneltern als Paar, in Leipzig und online.">
+<meta property="og:url" content="https://klub-der-1000-traenen.de/paare">
+<meta property="og:image" content="https://klub-der-1000-traenen.de/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Zwei geöffnete Hände, die Wasser halten">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+
+<style>
+  :root {
+    --color-petrol-deep: #073336;
+    --color-petrol:      #11676A;
+    --color-petrol-high: #3A8E91;
+    --color-rose:        #E4B7C6;
+    --color-ink:         #092B4E;
+    --color-cream:       #E9E4D4;
+
+    --font-display: "Safiro", "Hanken Grotesk", "Helvetica Neue", system-ui, sans-serif;
+    --font-body:    "Open Sans", system-ui, sans-serif;
+
+    --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2.5rem;
+    --space-5: 4rem;   --space-6: 6rem;  --space-7: 10rem;
+
+    --container: 1200px;
+    --text-label: 0.78rem;
+    --shadow-photo: 0 10px 30px rgba(0,0,0,0.35), 0 2px 6px rgba(0,0,0,0.18);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { background: var(--color-petrol); color: var(--color-rose); scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--color-petrol-deep); font-family: var(--font-body); font-size: 1.1rem; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  ::selection { background: var(--color-rose); color: var(--color-ink); }
+  a { color: var(--color-rose); }
+  a:hover { color: var(--color-petrol-high); }
+  img { max-width: 100%; }
+  main { font-family: var(--font-body); color: var(--color-rose); overflow-x: hidden; }
+
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 1.25rem; }
+
+  /* Kicker */
+  .kicker { font-family: var(--font-body); font-weight: 700; font-size: var(--text-label); letter-spacing: 0.22em; text-transform: uppercase; line-height: 1.4; }
+  .kicker--tight { letter-spacing: 0.18em; }
+  .kicker--rose  { color: var(--color-rose); }
+  .kicker--muted { color: var(--color-petrol-high); }
+  .kicker--deep  { color: var(--color-petrol-deep); }
+
+  /* Buttons */
+  .btn { display: inline-flex; justify-content: center; align-items: center; gap: 0.6em; font-family: var(--font-body); font-weight: 600; text-transform: uppercase; letter-spacing: 0.18em; line-height: 1.2; text-decoration: none; cursor: pointer; border-radius: 0; border: 1px solid; white-space: nowrap; font-size: 0.78rem; padding: 0.85em 1.3em; transition: background 120ms ease, color 120ms ease, border-color 120ms ease; }
+  .btn--full { display: flex; width: 100%; }
+  .btn--sm { font-size: 0.72rem; padding: 0.7em 1.1em; }
+  .btn .arrow { font-family: var(--font-body); }
+  .btn--rose { background: var(--color-rose); color: var(--color-petrol-deep); border-color: var(--color-rose); }
+  .btn--rose:hover { background: transparent; color: var(--color-rose); }
+  .btn--outline { background: transparent; color: var(--color-rose); border-color: var(--color-rose); }
+  .btn--outline:hover { background: var(--color-rose); color: var(--color-ink); }
+  .btn--ink { font-family: var(--font-display); font-weight: 800; letter-spacing: 0.04em; background: var(--color-ink); color: var(--color-rose); border-color: var(--color-ink); }
+  .btn--ink:hover { background: var(--color-petrol-deep); color: var(--color-rose); border-color: var(--color-petrol-deep); }
+  .btn:focus-visible, .faq__q:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 3px; }
+
+  /* Header */
+  .site-header { position: absolute; top: 0; left: 0; right: 0; z-index: 10; padding: var(--space-3) 0; }
+  .site-header__inner { max-width: var(--container); margin: 0 auto; padding: 0 var(--space-3); display: flex; justify-content: space-between; align-items: center; gap: var(--space-3); }
+  .brand { display: inline-grid; grid-template-columns: auto auto; align-items: center; gap: 0.7em; text-decoration: none; color: var(--color-rose); }
+  .brand:hover { color: var(--color-rose); }
+  .brand img { height: 46px; width: auto; display: block; }
+  .brand span { font-family: var(--font-display); font-weight: 800; text-transform: uppercase; line-height: 0.88; letter-spacing: -0.005em; font-size: 15.2px; }
+  .brand span span { display: block; }
+
+  /* Hero */
+  .hero { position: relative; min-height: 88svh; background: var(--color-ink); overflow: hidden; display: flex; align-items: flex-end; }
+  .hero__bg { position: absolute; inset: 0; background: url(assets/wave-deep.jpg) center/cover no-repeat; }
+  .hero__tint { position: absolute; inset: 0; background: var(--color-ink); mix-blend-mode: multiply; opacity: .72; }
+  .hero__fade { position: absolute; inset: 0; background: linear-gradient(to top, var(--color-ink) 0%, rgba(9,43,78,0) 60%); }
+  .hero__eye { position: absolute; top: 5.5rem; right: -0.75rem; width: clamp(104px,14vw,200px); z-index: 1; pointer-events: none; transform: rotate(-9deg); }
+  .hero__eye img { width: 100%; height: auto; display: block; user-select: none; }
+  .hero__content { position: relative; z-index: 2; width: 100%; max-width: var(--container); margin: 0 auto; padding: 10rem 1.25rem 2.5rem; }
+  .hero h1 { margin: 1rem 0 0; font-family: var(--font-display); font-weight: 800; font-size: clamp(2rem,8.4vw,4.4rem); line-height: 1; letter-spacing: -0.022em; color: var(--color-rose); max-width: 20ch; text-wrap: balance; }
+  .hero__sub { margin: 1.25rem 0 0; font-family: var(--font-display); font-weight: 300; font-size: clamp(1.15rem,4.6vw,1.45rem); line-height: 1.35; color: var(--color-rose); opacity: .9; max-width: 36ch; text-wrap: pretty; }
+  .hero__ctas { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 2rem; max-width: 400px; }
+  .hero__meta { margin-top: 0.9rem; font-size: 0.9rem; line-height: 1.45; color: var(--color-rose); opacity: .85; max-width: 40ch; }
+
+  /* Shared section type */
+  .sec { padding: clamp(3.5rem,10vw,6rem) 0 clamp(3rem,8vw,4rem); }
+  .h2 { font-family: var(--font-display); font-weight: 800; line-height: 1; letter-spacing: -0.02em; color: var(--color-rose); text-wrap: balance; }
+  .light { font-weight: 300; }
+  .normal { font-weight: normal; }
+
+  /* 02 Pain */
+  .pain { background: var(--color-petrol-deep); }
+  .pain h2 { margin: 0 0 1.5rem; max-width: 22ch; font-size: clamp(1.9rem,6.4vw,3.4rem); }
+  .pain__echo { margin: 0 0 2rem; max-width: 30ch; font-family: var(--font-display); font-weight: 300; font-size: clamp(1.3rem,4.8vw,1.8rem); line-height: 1.3; letter-spacing: -0.01em; color: var(--color-rose); text-wrap: pretty; }
+  .pain__body { margin: 0; padding-top: 1.5rem; border-top: 1px solid var(--color-petrol-high); max-width: 720px; font-size: 1.1rem; line-height: 1.6; color: var(--color-rose); opacity: .92; text-wrap: pretty; }
+
+  /* 03 Video */
+  .video { background: color-mix(in oklch, var(--color-petrol-high) 32%, white); padding: clamp(3rem,8vw,5rem) 1.25rem; }
+  .video__slot { max-width: 360px; margin: 0 auto; aspect-ratio: 9/16; border: 1.5px dashed var(--color-ink); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem; color: var(--color-ink); text-align: center; padding: 1.5rem; }
+  .video__play { font-size: 2rem; line-height: 1; }
+  .video__label { font-size: var(--text-label); letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; }
+
+  /* 04 Was möglich wird */
+  .vacation { background: var(--color-petrol-deep); }
+  .vacation__lead { margin: 1rem 0 2.5rem; max-width: 22ch; font-family: var(--font-display); font-weight: 800; font-size: clamp(1.8rem,6.6vw,3.4rem); line-height: 1.02; letter-spacing: -0.02em; color: var(--color-rose); text-wrap: balance; }
+  .layers { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%,280px),1fr)); gap: 2rem var(--space-4); }
+  .layer { border-top: 1px solid var(--color-petrol-high); padding-top: 1.5rem; }
+  .layer__label { font-size: var(--text-label); letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700; color: var(--color-petrol-high); margin-bottom: 0.75rem; }
+  .layer__label strong { color: var(--color-rose); margin-right: 0.5em; }
+  .layer p { margin: 0; font-family: var(--font-display); font-weight: 300; font-size: clamp(1.2rem,4.4vw,1.45rem); line-height: 1.3; color: var(--color-rose); text-wrap: pretty; }
+
+  /* 05 Wer wir sind */
+  .about { background: var(--color-petrol); padding: clamp(3.5rem,10vw,6rem) 0; }
+  .about__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%,340px),1fr)); gap: 2.5rem var(--space-5); align-items: center; }
+  .about__photos { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; padding-bottom: 1.5rem; }
+  .about__photos img { width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block; box-shadow: var(--shadow-photo); }
+  .about__photos img + img { transform: translateY(1.5rem); }
+  .about h2 { margin: 1rem 0 1.25rem; font-size: clamp(1.9rem,6vw,3rem); }
+  .about p { margin: 0 0 1rem; font-size: 1.1rem; line-height: 1.6; color: var(--color-ink); max-width: 48ch; text-wrap: pretty; }
+  .about p:last-of-type { margin-bottom: 0; }
+  .about__place { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--color-petrol-high); font-size: var(--text-label); letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; color: var(--color-rose); }
+
+  /* 06 Der nächste Schritt */
+  .step { background: var(--color-rose); color: var(--color-ink); }
+  .step ::selection { background: var(--color-ink); color: var(--color-rose); }
+  .step__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%,340px),1fr)); gap: 3rem var(--space-5); }
+  .step__col { border-top: 1.5px solid var(--color-ink); padding-top: 1.5rem; scroll-margin-top: 1.5rem; display: flex; flex-direction: column; }
+  .step h3 { margin: 0.75rem 0; font-family: var(--font-display); font-weight: 800; font-size: clamp(1.55rem,5.4vw,2rem); line-height: 1.05; letter-spacing: -0.02em; color: var(--color-ink); text-wrap: balance; }
+  .step p { margin: 0 0 1.5rem; font-size: 1.05rem; line-height: 1.6; color: var(--color-ink); max-width: 44ch; text-wrap: pretty; }
+  .step__action { margin-top: auto; }
+  .step__note { margin-top: 0.75rem; font-size: 0.9rem; line-height: 1.45; color: var(--color-petrol-deep); }
+
+  /* 07 Partner */
+  .partner { position: relative; background: var(--color-petrol-deep); padding: clamp(3.5rem,10vw,6rem) 0; }
+  .partner h2 { margin: 1rem 0; font-size: clamp(1.9rem,6vw,3rem); }
+  .partner__intro { margin: 0 0 2rem; font-size: 1.05rem; line-height: 1.6; color: var(--color-rose); opacity: .92; max-width: 48ch; text-wrap: pretty; }
+  .partner__card { background: var(--color-petrol); padding: clamp(1.5rem,5vw,2.5rem); display: flex; flex-direction: column; gap: 1.5rem; max-width: 720px; }
+  .partner__quote { margin: 0; font-family: var(--font-display); font-weight: 300; font-size: clamp(1.3rem,4.8vw,1.7rem); line-height: 1.3; color: var(--color-rose); text-wrap: pretty; }
+  .partner__url { font-size: 0.95rem; color: var(--color-ink); font-weight: 600; }
+
+  /* 08 FAQ */
+  .faq { background: var(--color-petrol); padding: clamp(3.5rem,10vw,6rem) 0; }
+  .faq__inner { max-width: 880px; margin: 0 auto; padding: 0 1.25rem; }
+  .faq h2 { margin: 1rem 0 2rem; font-size: clamp(1.9rem,6vw,3rem); }
+  .faq__list { border-bottom: 1px solid var(--color-petrol-high); }
+  .faq__item { border-top: 1px solid var(--color-petrol-high); }
+  .faq__q { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 1rem; min-height: 64px; padding: 1rem 0; background: none; border: 0; cursor: pointer; text-align: left; font-family: var(--font-display); font-weight: 800; font-size: clamp(1.15rem,4.4vw,1.45rem); line-height: 1.15; letter-spacing: -0.01em; color: var(--color-rose); }
+  .faq__glyph { font-family: var(--font-body); font-weight: 400; font-size: 1.2rem; flex: none; }
+  .faq__a { margin: 0 0 1.5rem; font-size: 1.05rem; line-height: 1.6; color: var(--color-ink); max-width: 56ch; text-wrap: pretty; }
+  .faq__cta { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 0.75rem; max-width: 400px; }
+
+  /* Footer */
+  .site-footer { background: var(--color-petrol-deep); padding: var(--space-5) 0 5.5rem; color: var(--color-petrol-high); font-family: var(--font-body); font-size: var(--text-label); letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; }
+  .site-footer__inner { max-width: var(--container); margin: 0 auto; padding: 0 var(--space-3); display: flex; justify-content: space-between; gap: var(--space-3); flex-wrap: wrap; }
+  .site-footer a { text-decoration: none; color: inherit; }
+  .site-footer a:hover { color: var(--color-rose); }
+  .site-footer__links { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+
+  /* Mobile bar */
+  .mobile-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; background: var(--color-petrol-deep); border-top: 1px solid var(--color-petrol-high); padding: 0.6rem 0.75rem calc(0.6rem + env(safe-area-inset-bottom)); display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+  .mobile-bar .btn { min-height: 48px; padding: 0.6em 0.5em; font-size: 0.74rem; letter-spacing: 0.12em; }
+  .mobile-bar[hidden] { display: none; }
+
+  /* Warm: Bilder */
+  .photo { display: block; width: 100%; height: auto; object-fit: cover; box-shadow: var(--shadow-photo); }
+  .pain__grid { display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: center; }
+  .pain__photo { aspect-ratio: 4/3; object-position: 50% 62%; }
+  .vacation__grid { display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: center; margin-bottom: 2.5rem; }
+  .vacation__grid .vacation__lead { margin-bottom: 0; }
+  .vacation__photo { aspect-ratio: 4/3; object-position: 50% 45%; }
+  .step__photo { aspect-ratio: 16/10; object-position: 50% 60%; margin-bottom: 1.5rem; box-shadow: none; }
+  @media (min-width: 880px) {
+    .pain__grid { grid-template-columns: 1.15fr 0.85fr; gap: var(--space-5); }
+    .pain__photo { aspect-ratio: 4/5; object-position: 50% 50%; }
+    .vacation__grid { grid-template-columns: 1.15fr 0.85fr; gap: var(--space-5); }
+    .vacation__photo { aspect-ratio: 4/5; }
+  }
+
+  /* Warm: Creme für "Wer wir sind" */
+  .about--cream { background: var(--color-cream); }
+  .about--cream ::selection { background: var(--color-ink); color: var(--color-cream); }
+  .about--cream .kicker--rose { color: var(--color-petrol); }
+  .about--cream h2 { color: var(--color-ink); }
+  .about--cream .about__place { color: var(--color-petrol); border-top-color: rgba(9,43,78,0.25); }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn { transition: none; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <section id="top" class="hero" data-screen-label="01 Wiedererkennen">
+    <div class="hero__bg"></div>
+    <div class="hero__tint"></div>
+    <div class="hero__fade"></div>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="#top" aria-label="Klub der Tausend Tränen">
+          <img src="assets/logo.png" alt="" aria-hidden="true">
+          <span><span>Klub der</span><span>1000 Tränen</span></span>
+        </a>
+      </div>
+    </header>
+    <div class="hero__eye" aria-hidden="true"><img src="assets/eye-magenta.png" alt=""></div>
+    <div class="hero__content">
+      <div class="kicker kicker--rose">Für Sterneneltern</div>
+      <h1>Euch fällt es gerade schwer, gut füreinander da zu sein — in dem Moment, wo ihr euch am meisten braucht.</h1>
+      <p class="hero__sub">Wenn du dir Entlastung für euch in dieser Verlustkrise wünschst, bist du hier genau richtig.</p>
+      <div class="hero__ctas">
+        <a class="btn btn--rose btn--full" href="https://buy.stripe.com/cNifZi5Qz2XC7WW28gg3603" data-goatcounter-click="gedenktag-hero">Jetzt Platz sichern <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn btn--outline btn--full" href="#gespraech">Kostenloses Gespräch buchen</a>
+      </div>
+      <div class="hero__meta">Rabatt für den Gedenktag am 15. Oktober in Leipzig · Gespräch 20 Min., kostenlos</div>
+    </div>
+  </section>
+
+  <section class="sec pain" data-screen-label="02 Das kennt ihr">
+    <div class="container pain__grid">
+      <div>
+      <h2 class="h2">Euer Kind ist gestorben. <span class="light">Und jetzt steht eure Beziehung auf dem Spiel.</span></h2>
+      <p class="pain__echo">Einer weint, einer funktioniert. Und keiner kommt mehr an den anderen ran.</p>
+      <p class="pain__body">Ihr liebt euch. Ihr trauert beide. Nur eben so verschieden, dass es sich wie Einsamkeit anfühlt. Dabei braucht ihr euch gerade am stärksten.</p>
+      </div>
+      <img class="photo pain__photo" src="assets/room-tulips.jpg" alt="Ein Sofa mit zwei Tassen auf dem Tisch" loading="lazy">
+    </div>
+  </section>
+
+  <section class="video" data-screen-label="03 Video">
+    <div class="video__slot">
+      <div class="video__play">▶</div>
+      <div class="video__label">Video-Platzhalter · 9:16</div>
+    </div>
+  </section>
+
+  <section class="sec vacation" data-screen-label="04 Was möglich wird">
+    <div class="container">
+      <div class="kicker kicker--muted">Was möglich wird</div>
+      <div class="vacation__grid">
+        <p class="vacation__lead"><span class="normal">Euer Kind hat euch nicht auseinandergebracht.</span><br>Es hat euch zusammengebracht.</p>
+        <img class="photo vacation__photo" src="assets/room-sofa.jpg" alt="Zwei Hände, die sich halten" loading="lazy">
+      </div>
+      <div class="layers">
+        <div class="layer">
+          <div class="layer__label"><strong>01</strong>Meine Trauer</div>
+          <p>Deine Trauer bekommt den Platz, der ihr zusteht — statt weggedrückt zu werden, weil einer funktionieren muss.</p>
+        </div>
+        <div class="layer">
+          <div class="layer__label"><strong>02</strong>Unsere Beziehung</div>
+          <p>Ihr fühlt euch wieder voneinander getragen und gehalten — und seid einander näher, als ihr es vorher wart.</p>
+        </div>
+        <div class="layer">
+          <div class="layer__label"><strong>03</strong>Unsere Familie</div>
+          <p>Auch die Fragen rund um Geschwisterkinder oder einen weiteren Kinderwunsch — falls sie bei euch eine Rolle spielen — bekommen einen Platz.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about about--cream" data-screen-label="05 Wer wir sind">
+    <div class="container about__grid">
+      <div class="about__photos">
+        <img src="assets/anna-doreen.jpg" alt="Anna-Doreen Böhmer">
+        <img src="assets/jonas-neu.jpg" alt="Jonas Zimmermann">
+      </div>
+      <div>
+        <div class="kicker kicker--rose">Wer wir sind</div>
+        <h2 class="h2">Anna-Doreen und Jonas. <span class="light">Selbst Sterneneltern.</span></h2>
+        <p>Wir sind beide Sterneneltern und kennen die Herausforderungen für Paare aus eigener Erfahrung. Heute begleiten wir, dafür ausgebildet, Paare durch genau diese Zeit.</p>
+        <p>Wir arbeiten auf drei Ebenen: mit der Trauer jedes Einzelnen, mit eurer Beziehung und mit euch als Familie.</p>
+        <div class="about__place">Leipzig Plagwitz · Online</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="schritt" class="sec step" data-screen-label="06 Der nächste Schritt">
+    <div class="container">
+      <div class="kicker kicker--deep">Der nächste Schritt</div>
+      <div class="step__grid">
+
+        <div id="gedenktag" class="step__col">
+          <img class="photo step__photo" src="assets/hands.jpg" alt="Ein Raum mit Sitzkissen, Tulpen und einer brennenden Kerze" loading="lazy">
+          <div class="kicker kicker--deep kicker--tight">Gedenktag · 15. Oktober · Leipzig</div>
+          <h3>Am 15. Oktober gedenken wir unserer Sternenkinder. <span class="normal">Komm dazu.</span></h3>
+          <p>Wer über Instagram kommt, zahlt 20 € statt 25 €.</p>
+          <div class="step__action">
+            <a class="btn btn--ink btn--full" href="https://buy.stripe.com/cNifZi5Qz2XC7WW28gg3603" data-goatcounter-click="gedenktag">Jetzt Platz sichern <span class="arrow" aria-hidden="true">→</span></a>
+            <div class="step__note">Verbindliche Anmeldung über Stripe · Bestätigung per Mail.</div>
+          </div>
+        </div>
+
+        <div id="gespraech" class="step__col">
+          <div class="kicker kicker--deep kicker--tight">Kennenlerngespräch · 20 Minuten · Online oder live**</div>
+          <h3>Zwanzig Minuten mit uns. <span class="light">Kostenlos.</span></h3>
+          <p>Wir lernen uns kennen und schauen gemeinsam, ob wir euch helfen können. Ohne Druck. Ohne Erwartungen. Dafür mit Jonas oder Anna-Doreen.</p>
+          <div class="step__action">
+            <!-- TODO: Link zur Google-Kalender-Buchungsseite eintragen -->
+            <a class="btn btn--ink btn--full" href="#gespraech" data-goatcounter-click="kennenlernen">Termin wählen <span class="arrow" aria-hidden="true">→</span></a>
+            <div class="step__note">Termin direkt im Kalender buchen · Bestätigung per Mail.<br>**Wenn dir vor Ort in Leipzig lieber ist, click hier.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="partner" data-screen-label="07 Wenn dein Partner zögert">
+    <div class="container">
+      <h2 class="h2">Wenn dein Partner zögert...</h2>
+      <p class="partner__intro">Oft ist einer bereit, der andere noch nicht. Diese Worte haben anderen Paaren geholfen. Kopier sie, schick sie weiter, ändere sie, wie es für dich passt.</p>
+      <div class="partner__card">
+        <p class="partner__quote" id="partner-text">„Können wir uns das mal gemeinsam anschauen? Du musst nichts sagen. Aber ich will das gerne mit dir zusammen machen.“</p>
+        <div class="partner__url">klub-der-1000-traenen.de/paare</div>
+        <div>
+          <button type="button" class="btn btn--outline btn--sm" id="partner-copy" data-goatcounter-click="partner-weiterschicken">Satz kopieren</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" data-screen-label="08 FAQ">
+    <div class="faq__inner">
+      <div class="kicker kicker--rose">Fragen</div>
+      <h2 class="h2">Was ihr euch vielleicht fragt.</h2>
+      <div class="faq__list" id="faq"></div>
+      <div class="faq__cta">
+        <a class="btn btn--rose btn--full" href="#schritt">Nächster Schritt <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <span style="color:var(--color-rose)">© 2026 Klub der Tausend Tränen</span>
+      <a href="mailto:hallo@klub-der-1000-traenen.de">hallo@klub-der-1000-traenen.de</a>
+      <span class="site-footer__links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="https://www.instagram.com/klub_der1000traenen/">Instagram</a>
+      </span>
+    </div>
+  </footer>
+
+  <div class="mobile-bar" id="mobile-bar" hidden>
+    <a class="btn btn--rose btn--full" href="https://buy.stripe.com/cNifZi5Qz2XC7WW28gg3603" data-goatcounter-click="gedenktag-leiste">Jetzt Platz sichern</a>
+    <a class="btn btn--outline btn--full" href="#gespraech">Gespräch buchen</a>
+  </div>
+</main>
+
+<script>
+(function () {
+  // FAQ
+  var faqs = [
+    ['Muss er reden?', 'Nein. Zuhören reicht. Niemand muss sich vorstellen, erzählen oder etwas von sich preisgeben, wenn er nicht will.'],
+    ['Ist das Therapie?', 'Nein. Keine Behandlung, keine Diagnose — ein Ort, an dem ihr als Paar seid, mit zwei Menschen, die selbst betroffen und ausgebildet sind.'],
+    ['Was, wenn es nicht passt?', 'Ihr kommt, schaut es euch an — und wenn es nicht passt, geht ihr einfach. Kein Nachfassen, keine Fragen. Versprochen.'],
+    ['Muss ich traurig sein?', 'Nein. Wir alle trauern auf unsere eigene Art. Du darfst fühlen, was du eben fühlst.'],
+    ['Kann ich auch kommen, wenn mein Verlust schon länger her ist?', 'Gerade dann. Die meisten, die zu uns kommen, haben den Verlust nicht letzte Woche erlebt — sondern vor Jahren. Trauer hat kein Ablaufdatum.']
+  ];
+  var list = document.getElementById('faq');
+  var items = faqs.map(function (f, i) {
+    var item = document.createElement('div');
+    item.className = 'faq__item';
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'faq__q';
+    btn.id = 'faq-q-' + i;
+    btn.setAttribute('aria-controls', 'faq-a-' + i);
+    var q = document.createElement('span'); q.textContent = f[0];
+    var g = document.createElement('span'); g.className = 'faq__glyph'; g.setAttribute('aria-hidden', 'true');
+    btn.appendChild(q); btn.appendChild(g);
+    var a = document.createElement('p');
+    a.className = 'faq__a'; a.id = 'faq-a-' + i; a.textContent = f[1];
+    item.appendChild(btn); item.appendChild(a);
+    list.appendChild(item);
+    btn.addEventListener('click', function () { setOpen(open === i ? null : i); });
+    return { btn: btn, glyph: g, answer: a };
+  });
+  var open = 0;
+  function setOpen(idx) {
+    open = idx;
+    items.forEach(function (it, i) {
+      var isOpen = i === open;
+      it.btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      it.glyph.textContent = isOpen ? '↑' : '↓';
+      it.answer.hidden = !isOpen;
+    });
+  }
+  setOpen(0);
+
+  // Partner-Satz: am Handy Teilen-Menü, sonst Zwischenablage
+  var longText = 'Können wir uns das mal gemeinsam anschauen? Du musst nichts sagen. Aber ich will das gerne mit dir zusammen machen.\nklub-der-1000-traenen.de/paare';
+  var copyBtn = document.getElementById('partner-copy');
+  function isNarrow() { return window.innerWidth < 880; }
+  function canShare() { return isNarrow() && !!navigator.share; }
+  var resetTimer;
+  function setLabel(txt) { copyBtn.textContent = txt; }
+  function defaultLabel() { setLabel(canShare() ? 'Weiterschicken →' : 'Satz kopieren'); }
+  defaultLabel();
+  copyBtn.addEventListener('click', function () {
+    if (canShare()) { navigator.share({ text: longText }).catch(function () {}); return; }
+    var done = function () {
+      setLabel('Kopiert ✓');
+      clearTimeout(resetTimer);
+      resetTimer = setTimeout(defaultLabel, 2200);
+    };
+    var fail = function () {
+      var range = document.createRange();
+      range.selectNodeContents(document.getElementById('partner-text'));
+      var sel = window.getSelection();
+      sel.removeAllRanges(); sel.addRange(range);
+    };
+    if (navigator.clipboard) { navigator.clipboard.writeText(longText).then(done, fail); } else { fail(); }
+  });
+
+  // Mobile Leiste: nach dem Hero sichtbar, nicht über dem CTA-Block
+  var bar = document.getElementById('mobile-bar');
+  var step = document.getElementById('schritt');
+  function onScroll() {
+    var r = step.getBoundingClientRect();
+    var stepInView = r.top < window.innerHeight && r.bottom > 0;
+    var scrolled = window.scrollY > window.innerHeight * 0.75;
+    bar.hidden = !(isNarrow() && scrolled && !stepInView);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', function () { onScroll(); defaultLabel(); });
+  onScroll();
+})();
+</script>
+</body>
+</html>
