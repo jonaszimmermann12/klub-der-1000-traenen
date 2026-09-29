@@ -111,9 +111,15 @@
 
   /* 03 Video */
   .video { background: color-mix(in oklch, var(--color-petrol-high) 32%, white); padding: clamp(3rem,8vw,5rem) 1.25rem; }
-  .video__slot { max-width: 360px; margin: 0 auto; aspect-ratio: 9/16; border: 1.5px dashed var(--color-ink); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem; color: var(--color-ink); text-align: center; padding: 1.5rem; }
-  .video__play { font-size: 2rem; line-height: 1; }
-  .video__label { font-size: var(--text-label); letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; }
+  .video__inner { max-width: 720px; margin: 0 auto; }
+  .video__frame { position: relative; aspect-ratio: 16/9; background: var(--color-petrol-deep); overflow: hidden; }
+  .video__frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .video__facade { position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; border: 0; background: none; cursor: pointer; }
+  .video__facade img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .video__play { position: absolute; top: 50%; left: 50%; width: 72px; height: 72px; margin: -36px 0 0 -36px; border-radius: 50%; background: var(--color-rose); box-shadow: 0 4px 18px rgb(0 0 0 / .25); transition: transform .2s ease; }
+  .video__play::after { content: ""; position: absolute; top: 50%; left: 50%; margin: -12px 0 0 -7px; border-style: solid; border-width: 12px 0 12px 20px; border-color: transparent transparent transparent var(--color-ink); }
+  .video__facade:hover .video__play, .video__facade:focus-visible .video__play { transform: scale(1.08); }
+  .video__caption { margin: 1rem 0 0; text-align: center; color: var(--color-ink); font-size: var(--text-label); letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; }
 
   /* 04 Was möglich wird */
   .vacation { background: var(--color-petrol-deep); }
@@ -219,9 +225,14 @@
   </section>
 
   <section class="video" data-screen-label="03 Video">
-    <div class="video__slot">
-      <div class="video__play">▶</div>
-      <div class="video__label">Video-Platzhalter · 9:16</div>
+    <div class="video__inner">
+      <div class="video__frame">
+        <button type="button" class="video__facade" data-vimeo="1231216829" data-goatcounter-click="video-play" aria-label="Video abspielen: Anna-Doreen und Jonas stellen sich vor, 4 Minuten">
+          <img src="assets/video-poster.jpg" alt="Anna-Doreen und Jonas auf einem rosa Sofa" width="960" height="540" loading="lazy" decoding="async">
+          <span class="video__play" aria-hidden="true"></span>
+        </button>
+      </div>
+      <p class="video__caption">4 Minuten · Anna-Doreen und Jonas stellen sich vor</p>
     </div>
   </section>
 
@@ -413,6 +424,19 @@
   window.addEventListener('resize', function () { onScroll(); defaultLabel(); });
   onScroll();
 })();
+</script>
+<script>
+  // Video: Vimeo lädt erst beim Antippen
+  document.querySelectorAll(".video__facade").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const f = document.createElement("iframe");
+      f.src = "https://player.vimeo.com/video/" + btn.dataset.vimeo + "?autoplay=1&dnt=1&title=0&byline=0&portrait=0&texttrack=de";
+      f.allow = "autoplay; fullscreen; picture-in-picture";
+      f.allowFullscreen = true;
+      f.title = "Anna-Doreen und Jonas stellen sich vor";
+      btn.replaceWith(f);
+    });
+  });
 </script>
 </body>
 </html>
