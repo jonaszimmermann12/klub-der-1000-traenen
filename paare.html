@@ -32,6 +32,7 @@
     --color-petrol-high: #3A8E91;
     --color-rose:        #E4B7C6;
     --color-ink:         #092B4E;
+    --color-cream:       #E9E4D4;
 
     --font-display: "Safiro", "Hanken Grotesk", "Helvetica Neue", system-ui, sans-serif;
     --font-body:    "Open Sans", system-ui, sans-serif;
@@ -183,6 +184,28 @@
   .mobile-bar .btn { min-height: 48px; padding: 0.6em 0.5em; font-size: 0.74rem; letter-spacing: 0.12em; }
   .mobile-bar[hidden] { display: none; }
 
+  /* Warm: Bilder */
+  .photo { display: block; width: 100%; height: auto; object-fit: cover; box-shadow: var(--shadow-photo); }
+  .pain__grid { display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: center; }
+  .pain__photo { aspect-ratio: 4/3; object-position: 50% 62%; }
+  .vacation__grid { display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: center; margin-bottom: 2.5rem; }
+  .vacation__grid .vacation__lead { margin-bottom: 0; }
+  .vacation__photo { aspect-ratio: 4/3; object-position: 50% 45%; }
+  .step__photo { aspect-ratio: 16/10; object-position: 50% 60%; margin-bottom: 1.5rem; box-shadow: none; }
+  @media (min-width: 880px) {
+    .pain__grid { grid-template-columns: 1.15fr 0.85fr; gap: var(--space-5); }
+    .pain__photo { aspect-ratio: 4/5; object-position: 50% 50%; }
+    .vacation__grid { grid-template-columns: 1.15fr 0.85fr; gap: var(--space-5); }
+    .vacation__photo { aspect-ratio: 4/5; }
+  }
+
+  /* Warm: Creme für "Wer wir sind" */
+  .about--cream { background: var(--color-cream); }
+  .about--cream ::selection { background: var(--color-ink); color: var(--color-cream); }
+  .about--cream .kicker--rose { color: var(--color-petrol); }
+  .about--cream h2 { color: var(--color-ink); }
+  .about--cream .about__place { color: var(--color-petrol); border-top-color: rgba(9,43,78,0.25); }
+
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .btn { transition: none; }
@@ -218,10 +241,13 @@
   </section>
 
   <section class="sec pain" data-screen-label="02 Das kennt ihr">
-    <div class="container">
+    <div class="container pain__grid">
+      <div>
       <h2 class="h2">Euer Kind ist gestorben. <span class="light">Und jetzt steht eure Beziehung auf dem Spiel.</span></h2>
       <p class="pain__echo">Einer weint, einer funktioniert. Und keiner kommt mehr an den anderen ran.</p>
       <p class="pain__body">Ihr liebt euch. Ihr trauert beide. Nur eben so verschieden, dass es sich wie Einsamkeit anfühlt. Dabei braucht ihr euch gerade am stärksten.</p>
+      </div>
+      <img class="photo pain__photo" src="assets/room-tulips.jpg" alt="Ein Sofa mit zwei Tassen auf dem Tisch" loading="lazy">
     </div>
   </section>
 
@@ -240,7 +266,10 @@
   <section class="sec vacation" data-screen-label="04 Was möglich wird">
     <div class="container">
       <div class="kicker kicker--muted">Was möglich wird</div>
-      <p class="vacation__lead"><span class="normal">Euer Kind hat euch nicht auseinandergebracht.</span><br>Es hat euch zusammengebracht.</p>
+      <div class="vacation__grid">
+        <p class="vacation__lead"><span class="normal">Euer Kind hat euch nicht auseinandergebracht.</span><br>Es hat euch zusammengebracht.</p>
+        <img class="photo vacation__photo" src="assets/room-sofa.jpg" alt="Zwei Hände, die sich halten" loading="lazy">
+      </div>
       <div class="layers">
         <div class="layer">
           <div class="layer__label"><strong>01</strong>Meine Trauer</div>
@@ -258,7 +287,7 @@
     </div>
   </section>
 
-  <section class="about" data-screen-label="05 Wer wir sind">
+  <section class="about about--cream" data-screen-label="05 Wer wir sind">
     <div class="container about__grid">
       <div class="about__photos">
         <img src="assets/anna-doreen.jpg" alt="Anna-Doreen Böhmer">
@@ -280,6 +309,7 @@
       <div class="step__grid">
 
         <div id="gedenktag" class="step__col">
+          <img class="photo step__photo" src="assets/gedenktag-kerze.jpg" alt="Eine brennende Kerze auf dem Boden, daneben Becher, Blumen und Rosenblätter, die eine Frau verstreut" loading="lazy">
           <div class="kicker kicker--deep kicker--tight">Gedenktag · 15. Oktober · Leipzig</div>
           <h3>Am 15. Oktober gedenken wir unserer Sternenkinder. <span class="normal">Komm dazu.</span></h3>
           <p>Wer über Instagram kommt, zahlt 20 € statt 25 €.</p>
