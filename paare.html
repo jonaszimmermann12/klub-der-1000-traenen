@@ -150,6 +150,7 @@
   .step h3 { margin: 0.75rem 0; font-family: var(--font-display); font-weight: 800; font-size: clamp(1.55rem,5.4vw,2rem); line-height: 1.05; letter-spacing: -0.02em; color: var(--color-ink); text-wrap: balance; }
   .step p { margin: 0 0 1.5rem; font-size: 1.05rem; line-height: 1.6; color: var(--color-ink); max-width: 44ch; text-wrap: pretty; }
   .step__action { margin-top: auto; }
+  .step__intro { margin: 0.75rem 0 2.5rem; max-width: 36ch; font-family: var(--font-display); font-weight: 300; font-size: clamp(1.3rem,4.8vw,1.7rem); line-height: 1.3; color: var(--color-ink); text-wrap: pretty; }
   .step__note { margin-top: 0.75rem; font-size: 0.9rem; line-height: 1.45; color: var(--color-petrol-deep); }
   .step__note a { color: var(--color-ink); font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
 
@@ -159,7 +160,7 @@
   .partner__intro { margin: 0 0 2rem; font-size: 1.05rem; line-height: 1.6; color: var(--color-rose); opacity: .92; max-width: 48ch; text-wrap: pretty; }
   .partner__card { background: var(--color-petrol); padding: clamp(1.5rem,5vw,2.5rem); display: flex; flex-direction: column; gap: 1.5rem; max-width: 720px; }
   .partner__quote { margin: 0; font-family: var(--font-display); font-weight: 300; font-size: clamp(1.3rem,4.8vw,1.7rem); line-height: 1.3; color: var(--color-rose); text-wrap: pretty; }
-  .partner__url { font-size: 0.95rem; color: var(--color-ink); font-weight: 600; }
+  .partner__url { font-size: 0.95rem; color: var(--color-rose); font-weight: 400; }
 
   /* 08 FAQ */
   .faq { background: var(--color-petrol); padding: clamp(3.5rem,10vw,6rem) 0; }
@@ -169,7 +170,7 @@
   .faq__item { border-top: 1px solid var(--color-petrol-high); }
   .faq__q { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 1rem; min-height: 64px; padding: 1rem 0; background: none; border: 0; cursor: pointer; text-align: left; font-family: var(--font-display); font-weight: 800; font-size: clamp(1.15rem,4.4vw,1.45rem); line-height: 1.15; letter-spacing: -0.01em; color: var(--color-rose); }
   .faq__glyph { font-family: var(--font-body); font-weight: 400; font-size: 1.2rem; flex: none; }
-  .faq__a { margin: 0 0 1.5rem; font-size: 1.05rem; line-height: 1.6; color: var(--color-ink); max-width: 56ch; text-wrap: pretty; }
+  .faq__a { margin: 0 0 1.5rem; font-size: 1.05rem; line-height: 1.6; color: var(--color-rose); max-width: 56ch; text-wrap: pretty; }
   .faq__cta { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 0.75rem; max-width: 400px; }
 
   /* Footer */
@@ -199,9 +200,31 @@
     .vacation__photo { aspect-ratio: 4/5; }
   }
 
+  /* 04b Wie wir arbeiten */
+  .how { background: var(--color-petrol); }
+  .how__lead { margin: 1rem 0 2.5rem; max-width: 24ch; font-size: clamp(1.9rem,6.2vw,3.2rem); }
+  .how__steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr; gap: 2rem var(--space-4); }
+  @media (min-width: 720px) { .how__steps { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+  .how .layer { border-top-color: var(--color-petrol-high); }
+  .how .layer__label { color: var(--color-rose); font-weight: 400; }
+  .how__note { margin: 2.5rem 0 0; max-width: 40ch; font-family: var(--font-display); font-weight: 300; font-size: clamp(1.3rem,4.8vw,1.7rem); line-height: 1.3; color: var(--color-rose); text-wrap: pretty; }
+  .how__note strong { font-weight: 800; }
+
+  /* Workshop-Karte */
+  .offer-card { margin-top: 3rem; background: var(--color-rose); color: var(--color-ink); padding: clamp(1.5rem,5vw,2.5rem); max-width: 720px; box-shadow: var(--shadow-photo); }
+  .offer-card ::selection { background: var(--color-ink); color: var(--color-rose); }
+  .offer-card h3 { margin: 0.75rem 0; font-family: var(--font-display); font-weight: 800; font-size: clamp(1.55rem,5.4vw,2rem); line-height: 1.05; letter-spacing: -0.02em; color: var(--color-ink); }
+  .offer-card p { margin: 0 0 1rem; font-size: 1.05rem; line-height: 1.6; color: var(--color-ink); max-width: 48ch; text-wrap: pretty; }
+  .offer-card__meta { font-size: var(--text-label); letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; color: var(--color-petrol-deep); padding-top: 1rem; border-top: 1.5px solid var(--color-ink); }
+  .offer-card__action { margin-top: 1.5rem; }
+  .offer-card__note { margin-top: 0.75rem; font-size: 0.9rem; line-height: 1.45; color: var(--color-petrol-deep); max-width: 44ch; }
+  .offer-card__note a { color: var(--color-ink); font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
+  .step__grid--single { grid-template-columns: 1fr; max-width: 560px; }
+  #gespraech { scroll-margin-top: 1.5rem; }
+
   /* Warm: Creme für "Wer wir sind" */
-  .about--cream { background: var(--color-cream); }
-  .about--cream ::selection { background: var(--color-ink); color: var(--color-cream); }
+  .about--cream { background: color-mix(in oklch, var(--color-petrol-high) 32%, white); }
+  .about--cream ::selection { background: var(--color-ink); color: var(--color-rose); }
   .about--cream .kicker--rose { color: var(--color-petrol); }
   .about--cream h2 { color: var(--color-ink); }
   .about--cream .about__place { color: var(--color-petrol); border-top-color: rgba(9,43,78,0.25); }
@@ -231,12 +254,33 @@
     <div class="hero__content">
       <div class="kicker kicker--rose">Für Sterneneltern</div>
       <h1>Euch fällt es gerade schwer, gut füreinander da zu sein — in dem Moment, wo ihr euch am meisten braucht.</h1>
-      <p class="hero__sub">Wenn du dir Entlastung für euch in dieser Verlustkrise wünschst, bist du hier genau richtig.</p>
+      <p class="hero__sub">Wir begleiten euch als Paar durch diese Zeit. So, dass jeder auf seine Art trauern darf und ihr einander dabei wiederfindet.</p>
       <div class="hero__ctas">
-        <a class="btn btn--rose btn--full" href="https://buy.stripe.com/cNifZi5Qz2XC7WW28gg3603" data-goatcounter-click="gedenktag-hero">Jetzt Platz sichern <span class="arrow" aria-hidden="true">→</span></a>
-        <a class="btn btn--outline btn--full" href="#gespraech">Kostenloses Gespräch buchen</a>
+        <a class="btn btn--rose btn--full" href="#gespraech" data-goatcounter-click="hero-gespraech">Kostenloses Kennenlerngespräch <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn btn--outline btn--full" href="#gedenktag" data-goatcounter-click="hero-gedenktag">Gedenktag am 15. Oktober</a>
       </div>
-      <div class="hero__meta">Rabatt für den Gedenktag am 15. Oktober in Leipzig · Gespräch 20 Min., kostenlos</div>
+      <div class="hero__meta">20 Minuten am Telefon, kostenlos · Oder uns am Gedenktag in Leipzig kennenlernen</div>
+    </div>
+  </section>
+
+  <section id="schritt" class="sec step" data-screen-label="06 Der nächste Schritt">
+    <div class="container">
+      <div class="kicker kicker--deep">Der nächste Schritt</div>
+      <p class="step__intro">Komm zum Weltgedenktag. Alleine oder gemeinsam.</p>
+      <div class="step__grid step__grid--single">
+
+        <div id="gedenktag" class="step__col">
+          <img class="photo step__photo" src="assets/gedenktag-kerze.jpg" alt="Eine brennende Kerze auf dem Boden, daneben Becher, Blumen und Rosenblätter, die eine Frau verstreut" loading="lazy">
+          <div class="kicker kicker--deep kicker--tight">Gedenktag · 15. Oktober · Leipzig</div>
+          <h3>Am 15. Oktober gedenken wir unserer Sternenkinder. <span class="normal">Kommt dazu.</span></h3>
+          <p>Gemeinsam mit anderen Sterneneltern, vor Ort in Leipzig. Ein guter Weg, uns kennenzulernen. Wer über Instagram kommt, zahlt 20 € statt 25 €.</p>
+          <div class="step__action">
+            <a class="btn btn--ink btn--full" href="https://buy.stripe.com/cNifZi5Qz2XC7WW28gg3603" data-goatcounter-click="gedenktag">Platz am Gedenktag sichern <span class="arrow" aria-hidden="true">→</span></a>
+            <div class="step__note">Verbindliche Anmeldung über Stripe · Bestätigung per Mail.</div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -287,6 +331,43 @@
     </div>
   </section>
 
+  <section id="wie" class="sec how" data-screen-label="04b Wie wir arbeiten">
+    <div class="container">
+      <div class="kicker kicker--muted">Wie wir mit euch arbeiten</div>
+      <h2 class="h2 how__lead">So entsteht Entlastung. <span class="light">Schritt für Schritt, in eurem Tempo.</span></h2>
+      <ol class="how__steps">
+        <li class="layer">
+          <div class="layer__label"><strong>01</strong>Ankommen</div>
+          <p>Euer Kind wird gesehen. Ihr erzählt, was passiert ist, so viel oder so wenig, wie ihr mögt. Und wir fragen: Was wünscht ihr euch für euch?</p>
+        </li>
+        <li class="layer">
+          <div class="layer__label"><strong>02</strong>Verstehen, was im Weg steht</div>
+          <p>Wir finden gemeinsam die Muster, die euch blockieren. Sie haben euch bisher geschützt und das ist wichtig.</p>
+        </li>
+        <li class="layer">
+          <div class="layer__label"><strong>03</strong>Neuen Ausdruck für Trauer finden</div>
+          <p>Ihr findet gemeinsam Wege zu trauern, ohne euch dabei zu entfremden. Gemeinsam als Paar und jeder auf seine Weise. Euer verstorbenes Kind bekommt einen Platz.</p>
+        </li>
+        <li class="layer">
+          <div class="layer__label"><strong>04</strong>Der Blick nach vorne</div>
+          <p>Als Paar. Mit den Kindern, die da sind. Mit dem Wunsch nach einem weiteren Kind, oder der Angst davor.</p>
+        </li>
+      </ol>
+      <p class="how__note">Das ist <strong>unsere Arbeitsweise</strong> in allen unseren Angeboten, von Gruppen-Workshops bis zur Einzelbegleitung.</p>
+
+      <div class="offer-card" id="gespraech">
+        <div class="kicker kicker--deep kicker--tight">Workshop für Paare · Leipzig</div>
+        <h3>Vier Stunden für euch zwei.</h3>
+        <p>In einem kleinen Kreis mit höchstens sieben Paaren. Ihr seht, wie verschieden ihr trauert, ohne Urteil. Ihr sagt einander, was ihr braucht. Und ihr erinnert euch gemeinsam an euer Kind.</p>
+        <div class="offer-card__meta">4 Stunden · Leipzig Plagwitz · höchstens sieben Paare</div>
+        <div class="offer-card__action">
+          <a class="btn btn--ink" href="https://calendly.com/klub-der-tausend-traenen/kennenlernen" data-goatcounter-click="kennenlernen">Kostenloses Kennenlerngespräch <span class="arrow" aria-hidden="true">→</span></a>
+          <div class="offer-card__note">Vorher sprechen wir 20 Minuten miteinander, kostenlos. Ihr entscheidet ohne Druck, ob das zu euch passt.<br>Lieber vor Ort in Leipzig? <a href="https://zeeg.me/anna-doreen/einzelsession" data-goatcounter-click="vor-ort">Hier klicken</a>.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="about about--cream" data-screen-label="05 Wer wir sind">
     <div class="container about__grid">
       <div class="about__photos">
@@ -303,40 +384,10 @@
     </div>
   </section>
 
-  <section id="schritt" class="sec step" data-screen-label="06 Der nächste Schritt">
-    <div class="container">
-      <div class="kicker kicker--deep">Der nächste Schritt</div>
-      <div class="step__grid">
-
-        <div id="gedenktag" class="step__col">
-          <img class="photo step__photo" src="assets/gedenktag-kerze.jpg" alt="Eine brennende Kerze auf dem Boden, daneben Becher, Blumen und Rosenblätter, die eine Frau verstreut" loading="lazy">
-          <div class="kicker kicker--deep kicker--tight">Gedenktag · 15. Oktober · Leipzig</div>
-          <h3>Am 15. Oktober gedenken wir unserer Sternenkinder. <span class="normal">Komm dazu.</span></h3>
-          <p>Wer über Instagram kommt, zahlt 20 € statt 25 €.</p>
-          <div class="step__action">
-            <a class="btn btn--ink btn--full" href="https://buy.stripe.com/cNifZi5Qz2XC7WW28gg3603" data-goatcounter-click="gedenktag">Jetzt Platz sichern <span class="arrow" aria-hidden="true">→</span></a>
-            <div class="step__note">Verbindliche Anmeldung über Stripe · Bestätigung per Mail.</div>
-          </div>
-        </div>
-
-        <div id="gespraech" class="step__col">
-          <div class="kicker kicker--deep kicker--tight">Kennenlerngespräch · 20 Minuten · Telefon**</div>
-          <h3>Zwanzig Minuten mit uns. <span class="light">Kostenlos.</span></h3>
-          <p>Wir lernen uns kennen und schauen gemeinsam, ob wir euch helfen können. Ohne Druck. Ohne Erwartungen. Dafür rufe ich, Jonas, euch an.</p>
-          <div class="step__action">
-            <a class="btn btn--ink btn--full" href="https://calendly.com/klub-der-tausend-traenen/kennenlernen" data-goatcounter-click="kennenlernen">Termin wählen <span class="arrow" aria-hidden="true">→</span></a>
-            <div class="step__note">Termin direkt im Kalender buchen · Bestätigung per Mail.<br>**Wenn dir vor Ort in Leipzig lieber ist, <a href="https://zeeg.me/anna-doreen/einzelsession" data-goatcounter-click="vor-ort">klick hier</a>.</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
   <section class="partner" data-screen-label="07 Wenn dein Partner zögert">
     <div class="container">
       <h2 class="h2">Wenn dein Partner zögert...</h2>
-      <p class="partner__intro">Oft ist einer bereit, der andere noch nicht. Diese Worte haben anderen Paaren geholfen. Kopier sie, schick sie weiter, ändere sie, wie es für dich passt.</p>
+      <p class="partner__intro">Oft ist einer bereit, der andere noch nicht. Kopier diese Worte, schick sie weiter, ändere sie, wie es für dich passt.</p>
       <div class="partner__card">
         <p class="partner__quote" id="partner-text">„Können wir uns das mal gemeinsam anschauen? Du musst nichts sagen. Aber ich will das gerne mit dir zusammen machen.“</p>
         <div class="partner__url">klub-der-1000-traenen.de/paare</div>
@@ -353,7 +404,7 @@
       <h2 class="h2">Was ihr euch vielleicht fragt.</h2>
       <div class="faq__list" id="faq"></div>
       <div class="faq__cta">
-        <a class="btn btn--rose btn--full" href="#schritt">Nächster Schritt <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn btn--rose btn--full" href="index.html" data-goatcounter-click="alle-angebote">Weitere Angebote <span class="arrow" aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
@@ -366,13 +417,14 @@
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>
         <a href="https://www.instagram.com/klub_der1000traenen/">Instagram</a>
+        <a href="https://07864974.sibforms.com/serve/MUIFAIMwJQ8RhP7nKSZ8VomcUi6Npt6qS72df58IOm9Tz4IQw9bAbg4ChXZS6mN9qS9whFLuo4GgrDKa1lsoSSaJjGW1igKDW3D8kD7hr87VEX_UN3HWE5ujHJwK56_34VlO1bagSEezXY1yfNw0Hw-RcFCzJc-ByUOHdYsZhbyxDW47CIZS1bdfCb7NiIHIxgjaQ-Hyq5GKvdjS0g==" target="_blank" rel="noopener" data-goatcounter-click="newsletter-footer">Newsletter</a>
       </span>
     </div>
   </footer>
 
   <div class="mobile-bar" id="mobile-bar" hidden>
-    <a class="btn btn--rose btn--full" href="https://buy.stripe.com/cNifZi5Qz2XC7WW28gg3603" data-goatcounter-click="gedenktag-leiste">Jetzt Platz sichern</a>
-    <a class="btn btn--outline btn--full" href="#gespraech">Gespräch buchen</a>
+    <a class="btn btn--rose btn--full" href="#gespraech" data-goatcounter-click="leiste-gespraech">Kennenlerngespräch</a>
+    <a class="btn btn--outline btn--full" href="#gedenktag" data-goatcounter-click="leiste-gedenktag">Gedenktag 15.10.</a>
   </div>
 </main>
 
@@ -380,10 +432,9 @@
 (function () {
   // FAQ
   var faqs = [
-    ['Muss er reden?', 'Nein. Zuhören reicht. Niemand muss sich vorstellen, erzählen oder etwas von sich preisgeben, wenn er nicht will.'],
+    ['Muss ich reden, weinen oder traurig sein?', 'Nein. Zuhören reicht. Niemand muss sich vorstellen, erzählen oder etwas von sich preisgeben, wenn er nicht will. Wir alle trauern auf unsere eigene Art. Du darfst fühlen, was du eben fühlst.'],
     ['Ist das Therapie?', 'Nein. Keine Behandlung, keine Diagnose — ein Ort, an dem ihr als Paar seid, mit zwei Menschen, die selbst betroffen und ausgebildet sind.'],
     ['Was, wenn es nicht passt?', 'Ihr kommt, schaut es euch an — und wenn es nicht passt, geht ihr einfach. Kein Nachfassen, keine Fragen. Versprochen.'],
-    ['Muss ich traurig sein?', 'Nein. Wir alle trauern auf unsere eigene Art. Du darfst fühlen, was du eben fühlst.'],
     ['Kann ich auch kommen, wenn mein Verlust schon länger her ist?', 'Gerade dann. Die meisten, die zu uns kommen, haben den Verlust nicht letzte Woche erlebt — sondern vor Jahren. Trauer hat kein Ablaufdatum.']
   ];
   var list = document.getElementById('faq');
