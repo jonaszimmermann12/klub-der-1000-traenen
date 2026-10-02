@@ -520,5 +520,20 @@
     });
   });
 </script>
+<script>
+  // Stripe: Herkunft aus der URL (utm_source/utm_campaign) als client_reference_id mitgeben,
+  // damit jede Zahlung zeigt, ob sie aus der Anzeige, der Bio o. Ä. kam. Kein Cookie, kein Speicher.
+  (function () {
+    var p = new URLSearchParams(location.search);
+    var ref = [p.get("utm_source"), p.get("utm_campaign")].filter(Boolean).join("_")
+      .replace(/[^A-Za-z0-9_-]/g, "").slice(0, 200);
+    if (!ref) return;
+    document.querySelectorAll('a[href^="https://buy.stripe.com/"]').forEach(function (a) {
+      var u = new URL(a.href);
+      u.searchParams.set("client_reference_id", ref);
+      a.href = u.toString();
+    });
+  })();
+</script>
 </body>
 </html>
