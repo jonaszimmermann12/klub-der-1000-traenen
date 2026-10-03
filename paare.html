@@ -153,6 +153,10 @@
   .step__intro { margin: 0.75rem 0 2.5rem; max-width: 36ch; font-family: var(--font-display); font-weight: 300; font-size: clamp(1.3rem,4.8vw,1.7rem); line-height: 1.3; color: var(--color-ink); text-wrap: pretty; }
   .step__note { margin-top: 0.75rem; font-size: 0.9rem; line-height: 1.45; color: var(--color-petrol-deep); }
   .step__note a { color: var(--color-ink); font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
+  .step__hosts { display: flex; align-items: center; margin: 0 0 1.25rem; }
+  .step__hosts img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-rose); }
+  .step__hosts img + img { margin-left: -14px; }
+  .step__hosts span { margin-left: 0.75rem; font-size: 0.95rem; line-height: 1.4; color: var(--color-ink); max-width: 30ch; }
 
   /* 07 Partner */
   .partner { position: relative; background: var(--color-petrol-deep); padding: clamp(3.5rem,10vw,6rem) 0; }
@@ -252,6 +256,7 @@
     </header>
     <div class="hero__eye" aria-hidden="true"><img src="assets/eye-magenta.png" alt=""></div>
     <div class="hero__content">
+      <!-- BIS 15.10.2026: Gedenktag-Hero (passt zur Anzeige). Danach wieder den Paar-Hero:
       <div class="kicker kicker--rose">Für Sterneneltern</div>
       <h1>Euch fällt es gerade schwer, gut füreinander da zu sein — in dem Moment, wo ihr euch am meisten braucht.</h1>
       <p class="hero__sub">Wir begleiten euch als Paar durch diese Zeit. So, dass jeder auf seine Art trauern darf und ihr einander dabei wiederfindet.</p>
@@ -260,6 +265,15 @@
         <a class="btn btn--outline btn--full" href="#gedenktag" data-goatcounter-click="hero-gedenktag">Gedenktag am 15. Oktober</a>
       </div>
       <div class="hero__meta">20 Minuten am Telefon, kostenlos · Oder uns am Gedenktag in Leipzig kennenlernen</div>
+      -->
+      <div class="kicker kicker--rose">Gedenktag · 15. Oktober · Leipzig</div>
+      <h1>Am 15. Oktober gedenken wir gemeinsam unserer Sternenkinder.</h1>
+      <p class="hero__sub">Ein Ort, an dem eure Trauer Platz hat. Mit anderen Sterneneltern, alleine oder als Paar. Begleitet von Anna-Doreen und Jonas.</p>
+      <div class="hero__ctas">
+        <a class="btn btn--rose btn--full" href="#gedenktag" data-goatcounter-click="hero-gedenktag">Platz am Gedenktag sichern <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn btn--outline btn--full" href="#gespraech" data-goatcounter-click="hero-gespraech">Möglichkeiten erkunden</a>
+      </div>
+      <div class="hero__meta">Über Instagram 20 € statt 25 € · Oder erst einmal 20 Minuten am Telefon, kostenlos</div>
     </div>
   </section>
 
@@ -274,9 +288,14 @@
           <div class="kicker kicker--deep kicker--tight">Gedenktag · 15. Oktober · Leipzig</div>
           <h3>Am 15. Oktober gedenken wir unserer Sternenkinder. <span class="normal">Kommt dazu.</span></h3>
           <p>Gemeinsam mit anderen Sterneneltern, vor Ort in Leipzig. Ein guter Weg, uns kennenzulernen. Wer über Instagram kommt, zahlt 20 € statt 25 €.</p>
+          <div class="step__hosts">
+            <img src="assets/anna-doreen.jpg" alt="Anna-Doreen Böhmer" loading="lazy">
+            <img src="assets/jonas-neu.jpg" alt="Jonas Zimmermann" loading="lazy">
+            <span>Anna-Doreen und Jonas sind an dem Tag für euch da.</span>
+          </div>
           <div class="step__action">
             <a class="btn btn--ink btn--full" href="https://buy.stripe.com/cNifZi5Qz2XC7WW28gg3603" data-goatcounter-click="gedenktag">Platz am Gedenktag sichern <span class="arrow" aria-hidden="true">→</span></a>
-            <div class="step__note">Verbindliche Anmeldung über Stripe · Bestätigung per Mail.</div>
+            <div class="step__note">Anmeldung über Stripe, Bestätigung per Mail. Wenn ihr doch nicht kommen könnt, schreibt uns kurz: <a href="mailto:hallo@klub-der-1000-traenen.de">hallo@klub-der-1000-traenen.de</a></div>
           </div>
         </div>
 
@@ -403,9 +422,11 @@
       <div class="kicker kicker--rose">Fragen</div>
       <h2 class="h2">Was ihr euch vielleicht fragt.</h2>
       <div class="faq__list" id="faq"></div>
+      <!-- BIS 15.10.2026 ausgeblendet (Hauptseite zeigt Gedenktag für 25 € statt 20 €). Danach wieder einbauen:
       <div class="faq__cta">
         <a class="btn btn--rose btn--full" href="index.html" data-goatcounter-click="alle-angebote">Weitere Angebote <span class="arrow" aria-hidden="true">→</span></a>
       </div>
+      -->
     </div>
   </section>
 
@@ -423,8 +444,9 @@
   </footer>
 
   <div class="mobile-bar" id="mobile-bar" hidden>
-    <a class="btn btn--rose btn--full" href="#gespraech" data-goatcounter-click="leiste-gespraech">Möglichkeiten erkunden</a>
-    <a class="btn btn--outline btn--full" href="#gedenktag" data-goatcounter-click="leiste-gedenktag">Gedenktag 15.10.</a>
+    <!-- BIS 15.10.2026 Gedenktag zuerst und gefüllt; danach Reihenfolge und Farben zurücktauschen -->
+    <a class="btn btn--rose btn--full" href="#gedenktag" data-goatcounter-click="leiste-gedenktag">Gedenktag 15.10.</a>
+    <a class="btn btn--outline btn--full" href="#gespraech" data-goatcounter-click="leiste-gespraech">Möglichkeiten erkunden</a>
   </div>
 </main>
 
