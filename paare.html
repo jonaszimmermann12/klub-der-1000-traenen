@@ -153,6 +153,15 @@
   .step__intro { margin: 0.75rem 0 2.5rem; max-width: 36ch; font-family: var(--font-display); font-weight: 300; font-size: clamp(1.3rem,4.8vw,1.7rem); line-height: 1.3; color: var(--color-ink); text-wrap: pretty; }
   .step__note { margin-top: 0.75rem; font-size: 0.9rem; line-height: 1.45; color: var(--color-petrol-deep); }
   .step__note a { color: var(--color-ink); font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
+  .step__facts { display: grid; grid-template-columns: auto 1fr; gap: 0.5rem 1rem; margin: 0 0 1.5rem; padding: 1rem 0; border-top: 1px solid rgba(9,43,78,0.25); border-bottom: 1px solid rgba(9,43,78,0.25); font-size: 1rem; line-height: 1.45; color: var(--color-ink); max-width: 44ch; }
+  .step__facts dt { font-size: var(--text-label); letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; padding-top: 0.15em; }
+  .step__facts dd { margin: 0; }
+  .step__musst { margin: 0 0 1.25rem; color: var(--color-ink); }
+  .step p.step__musst-head { margin: 0 0 0.4rem; font-weight: 700; }
+  .step__musst ul { margin: 0; padding-left: 1.2rem; font-size: 1rem; line-height: 1.55; }
+  .step__more { margin: 0 0 1.5rem; color: var(--color-ink); max-width: 44ch; }
+  .step__more summary { cursor: pointer; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+  .step__more p { margin: 0.75rem 0 0; font-size: 1rem; }
   .step__hosts { display: flex; align-items: center; margin: 0 0 1.25rem; }
   .step__hosts img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-rose); }
   .step__hosts img + img { margin-left: -14px; }
@@ -273,7 +282,7 @@
         <a class="btn btn--rose btn--full" href="#gedenktag" data-goatcounter-click="hero-gedenktag">Platz am Gedenktag sichern <span class="arrow" aria-hidden="true">→</span></a>
         <a class="btn btn--outline btn--full" href="#gespraech" data-goatcounter-click="hero-gespraech">Möglichkeiten erkunden</a>
       </div>
-      <div class="hero__meta">Über Instagram 20 € statt 25 € · Oder erst einmal 20 Minuten am Telefon, kostenlos</div>
+      <div class="hero__meta">Do, 15.10. · 18:30–21 Uhr · tæmpl, Leipzig-Plagwitz · Über Instagram 20 € statt 25 €</div>
     </div>
   </section>
 
@@ -285,9 +294,28 @@
 
         <div id="gedenktag" class="step__col">
           <img class="photo step__photo" src="assets/gedenktag-kerze.jpg" alt="Eine brennende Kerze auf dem Boden, daneben Becher, Blumen und Rosenblätter, die eine Frau verstreut" loading="lazy">
-          <div class="kicker kicker--deep kicker--tight">Gedenktag · 15. Oktober · Leipzig</div>
+          <div class="kicker kicker--deep kicker--tight">Trauerkreis · 15. Oktober · Leipzig</div>
           <h3>Am 15. Oktober gedenken wir unserer Sternenkinder. <span class="normal">Kommt dazu.</span></h3>
-          <p>Gemeinsam mit anderen Sterneneltern, vor Ort in Leipzig. Ein guter Weg, uns kennenzulernen. Wer über Instagram kommt, zahlt 20 € statt 25 €.</p>
+          <p>Ein Abend im Kreis für alle, die ein Sternenkind im Herzen tragen und diesen Tag nicht alleine verbringen möchten. Alleine oder als Paar.</p>
+          <dl class="step__facts">
+            <dt>Wann</dt><dd>Donnerstag, 15. Oktober, 18:30 bis 21 Uhr. Kommt gern ein paar Minuten früher.</dd>
+            <dt>Wo</dt><dd>tæmpl, Weißenfelser Straße 11, Leipzig-Plagwitz. Eingang an der Ecke Alte Straße.</dd>
+            <dt>Preis</dt><dd>20 € über Instagram statt 25 €</dd>
+          </dl>
+          <div class="step__musst">
+            <p class="step__musst-head">Ihr müsst nicht</p>
+            <ul>
+              <li>erzählen, was noch zu frisch ist</li>
+              <li>erklären, warum ihr hier seid</li>
+              <li>bis zum Schluss bleiben</li>
+            </ul>
+          </div>
+          <details class="step__more">
+            <summary>Was euch erwartet und was ihr mitbringen könnt</summary>
+            <p><strong>Was da ist:</strong> ein geschützter, achtsamer Raum. Eine einfühlsame Kreisleitung, die durch den Abend führt. Wasser und Tee. Andere Menschen, die Ähnliches erlebt haben.</p>
+            <p><strong>Bringt gern mit:</strong> eine Kerze für euer Sternenkind, Erinnerungsstücke wie Fotos, Ultraschallbilder oder ein Kuscheltier, ein Notizbuch, falls ihr etwas schreiben möchtet.</p>
+            <p><strong>Anfahrt:</strong> Bus 74 oder Tram 14, die Tram 1, 2 und 3 halten ganz in der Nähe.</p>
+          </details>
           <div class="step__hosts">
             <img src="assets/anna-doreen.jpg" alt="Anna-Doreen Böhmer" loading="lazy">
             <img src="assets/jonas-neu.jpg" alt="Jonas Zimmermann" loading="lazy">
