@@ -584,6 +584,27 @@
       a.href = u.toString();
     });
   })();
+
+  // GoatCounter: einmal pro Aufruf melden, wie weit jemand kommt (Gedenktag-Button im Bild,
+  // Seitenende erreicht). Unterscheidet "sieht die Karte, klickt nicht" von "springt vorher ab".
+  (function () {
+    if (!("IntersectionObserver" in window)) return;
+    function send(name) {
+      if (window.goatcounter && window.goatcounter.count) {
+        window.goatcounter.count({ path: name, title: name, event: true });
+      } else {
+        setTimeout(function () { send(name); }, 1000);
+      }
+    }
+    [["#gedenktag .step__action", "sicht-gedenktag-button"], [".site-footer", "sicht-seitenende"]].forEach(function (z) {
+      var el = document.querySelector(z[0]);
+      if (!el) return;
+      var io = new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) { io.disconnect(); send(z[1]); }
+      }, { threshold: 0.5 });
+      io.observe(el);
+    });
+  })();
 </script>
 </body>
 </html>
