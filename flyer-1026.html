@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weiterleitung zur Anmeldung – Klub der Tausend Tränen</title>
+<meta name="robots" content="noindex">
+<!-- QR-Code und Link im digitalen Flyer 10/2026 (Trauerkreis Gedenktag 15.10.).
+     Zählt den Aufruf in GoatCounter als /flyer-1026 und leitet zur Stripe-Anmeldung (25 €)
+     mit client_reference_id=flyer-1026 weiter. -->
+<script>
+  var ziel = "https://buy.stripe.com/7sYeVe1Ajaq42CC4gog3604?client_reference_id=flyer-1026";
+  var weg = false;
+  function weiter() { if (!weg) { weg = true; location.replace(ziel); } }
+  window.goatcounter = { no_onload: true };
+  setTimeout(weiter, 1500);
+</script>
+<script async src="//gc.zgo.at/count.js" data-goatcounter="https://klub1000traenen.goatcounter.com/count"
+  onload="try { window.goatcounter.count({ path: '/flyer-1026', title: 'Flyer 10/2026 QR-Code' }); } catch (e) {} setTimeout(weiter, 400);"
+  onerror="weiter()"></script>
+<style>
+  body { margin: 0; min-height: 100svh; display: grid; place-items: center; background: #11676A; color: #E4B7C6; font: 1.1rem/1.5 system-ui, sans-serif; text-align: center; padding: 1.5rem; }
+  a { color: #E4B7C6; }
+</style>
+</head>
+<body>
+<p>Einen Moment, die Anmeldung öffnet sich …<br><a href="https://buy.stripe.com/7sYeVe1Ajaq42CC4gog3604?client_reference_id=flyer-1026">Falls nicht, hier tippen</a></p>
+</body>
+</html>
