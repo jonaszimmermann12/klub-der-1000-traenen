@@ -276,13 +276,13 @@
       <div class="hero__meta">20 Minuten am Telefon, kostenlos · Oder uns am Gedenktag in Leipzig kennenlernen</div>
       -->
       <div class="kicker kicker--rose">Gedenktag · 15. Oktober · Leipzig</div>
-      <h1>Am 15. Oktober gedenken wir gemeinsam unserer Sternenkinder.</h1>
-      <p class="hero__sub">Ein Ort, an dem eure Trauer Platz hat. Mit anderen Sterneneltern, alleine oder als Paar. Begleitet von Anna-Doreen und Jonas.</p>
+      <h1>Hast du selbst ein Sternenkind oder kennst du Sterneneltern?</h1>
+      <p class="hero__sub">Am 15. Oktober gedenken wir gemeinsam unserer Sternenkinder. Ein Ort, an dem eure Trauer Platz hat, alleine oder als Paar. Begleitet von Anna-Doreen und Jonas.</p>
       <div class="hero__ctas">
         <a class="btn btn--rose btn--full" href="#gedenktag" data-goatcounter-click="hero-gedenktag">Platz am Gedenktag sichern <span class="arrow" aria-hidden="true">→</span></a>
-        <a class="btn btn--outline btn--full" href="#gespraech" data-goatcounter-click="hero-gespraech">Möglichkeiten erkunden</a>
+        <button type="button" class="btn btn--outline btn--full" id="hero-share" data-goatcounter-click="hero-weiterleiten">An Freunde weiterleiten</button>
       </div>
-      <div class="hero__meta">Do, 15.10. · 18:30–21 Uhr · tæmpl, Leipzig-Plagwitz · Über Instagram 20 € statt 25 €</div>
+      <div class="hero__meta">Do, 15.10. · 18:30–21 Uhr · tæmpl, Leipzig-Plagwitz</div>
     </div>
   </section>
 
@@ -300,7 +300,6 @@
           <dl class="step__facts">
             <dt>Wann</dt><dd>Donnerstag, 15. Oktober, 18:30 bis 21 Uhr. Kommt gern ein paar Minuten früher.</dd>
             <dt>Wo</dt><dd>tæmpl, Weißenfelser Straße 11, Leipzig-Plagwitz. Eingang an der Ecke Alte Straße.</dd>
-            <dt>Preis</dt><dd>20 € über Instagram statt 25 €</dd>
           </dl>
           <div class="step__musst">
             <p class="step__musst-head">Ihr müsst nicht</p>
@@ -541,6 +540,21 @@
       sel.removeAllRanges(); sel.addRange(range);
     };
     if (navigator.clipboard) { navigator.clipboard.writeText(longText).then(done, fail); } else { fail(); }
+  });
+
+  // Hero: an Freunde weiterleiten, gleiches Prinzip wie der Partner-Satz
+  var friendText = 'Hey, ich habe dieses Angebot gefunden und musste an dich denken. Wäre das was für dich?\nhttps://klub-der-1000-traenen.de/paare?utm_source=weiterleitung';
+  var shareBtn = document.getElementById('hero-share');
+  var shareLabel = shareBtn.textContent;
+  var shareTimer;
+  shareBtn.addEventListener('click', function () {
+    if (canShare()) { navigator.share({ text: friendText }).catch(function () {}); return; }
+    var done = function () {
+      shareBtn.textContent = 'Nachricht kopiert ✓';
+      clearTimeout(shareTimer);
+      shareTimer = setTimeout(function () { shareBtn.textContent = shareLabel; }, 2200);
+    };
+    if (navigator.clipboard) { navigator.clipboard.writeText(friendText).then(done, function () {}); }
   });
 
   // Mobile Leiste: nach dem Hero sichtbar, nicht über dem CTA-Block
